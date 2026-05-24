@@ -1,3 +1,4 @@
+import Reveal from "../components/Reveal";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -44,12 +45,12 @@ export default function Home() {
         <p className="relative mb-6 text-sm uppercase tracking-[0.4em] text-blue-500">
           ENGINEERED FOR INTELLIGENT SYSTEMS
         </p>
-
+      <Reveal>
         <h1 className="relative max-w-6xl text-5xl font-bold leading-tight md:text-8xl">
           Building the Future of
           <span className="text-blue-500"> AI Automation</span>
         </h1>
-
+      </Reveal>
         <p className="relative mt-8 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
           Chidakara designs premium AI systems, intelligent workflows,
           automation infrastructures, dashboards, and modern digital solutions
@@ -58,11 +59,11 @@ export default function Home() {
 
         <div className="relative mt-12 flex flex-wrap justify-center gap-4">
 
-          <button className="rounded-full bg-blue-600 px-8 py-4 text-sm font-medium transition hover:bg-blue-500">
+          <button className="rounded-full bg-blue-600 px-8 py-4 text-sm font-medium transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:shadow-[0_0_40px_rgba(37,99,235,0.5)]">"
             Explore Solutions
           </button>
 
-          <button className="rounded-full border border-white/10 px-8 py-4 text-sm font-medium transition hover:border-white/30">
+          <button className="rounded-full border border-white/10 px-8 py-4 text-sm font-medium transition-all duration-300 hover:scale-105 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
             View Showcase
           </button>
 
@@ -70,6 +71,7 @@ export default function Home() {
 
       </section>
             {/* SOLUTIONS SECTION */}
+      <Reveal>
       <section className="border-t border-white/10 bg-[#050505] px-6 py-32">
 
         <div className="mx-auto max-w-7xl">
@@ -153,7 +155,9 @@ export default function Home() {
         </div>
 
       </section>
+      </Reveal>
             {/* SHOWCASE SECTION */}
+      <Reveal>
       <section className="border-t border-white/10 bg-black px-6 py-32">
 
         <div className="mx-auto max-w-7xl">
@@ -178,7 +182,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-2">
 
             {/* SHOWCASE CARD 1 */}
-            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
+            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/30">
 
               <div className="relative h-[300px] overflow-hidden bg-gradient-to-br from-blue-600/20 to-black">
 
@@ -218,8 +222,7 @@ export default function Home() {
             </div>
 
             {/* SHOWCASE CARD 2 */}
-            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-
+            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/30">
               <div className="relative h-[300px] overflow-hidden bg-gradient-to-br from-blue-500/20 to-black">
 
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -268,7 +271,11 @@ export default function Home() {
         </div>
 
       </section>
+      </Reveal>
+      
             {/* CASE STUDY SECTION */}
+      <Reveal>
+
       <section className="border-t border-white/10 bg-[#050505] px-6 py-32">
 
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
@@ -400,7 +407,9 @@ export default function Home() {
         </div>
 
       </section>
+      </Reveal>
             {/* TECH STACK SECTION */}
+      <Reveal>
       <section className="border-t border-white/10 bg-black px-6 py-32">
 
         <div className="mx-auto max-w-7xl">
@@ -491,7 +500,10 @@ export default function Home() {
         </div>
 
       </section>
+      </Reveal>
+      
             {/* CTA SECTION */}
+      <Reveal>
       <section className="relative overflow-hidden border-t border-white/10 bg-[#050505] px-6 py-40">
 
         {/* BACKGROUND GLOW */}
@@ -531,6 +543,7 @@ export default function Home() {
         </div>
 
       </section>
+      </Reveal>
             {/* FOOTER */}
       <footer className="border-t border-white/10 bg-black px-6 py-10">
 
