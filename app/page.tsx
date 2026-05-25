@@ -1,7 +1,43 @@
-import Reveal from "../components/Reveal";
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
+
+  const glowStyle = {
+    background:
+      "radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%)",
+  };
+
+  const [projects, setProjects] = useState(0);
+  const [automations, setAutomations] = useState(0);
+  const [uptime, setUptime] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProjects((prev) => (prev < 12 ? prev + 1 : 12));
+      setAutomations((prev) => (prev < 48 ? prev + 2 : 48));
+      setUptime((prev) => (prev < 99 ? prev + 3 : 99));
+    }, 60);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden">
+  <main className="relative min-h-screen overflow-hidden bg-black text-white">
+    <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-[120px] animate-pulse"></div>
+
+<div className="pointer-events-none absolute right-0 top-[40%] h-[400px] w-[400px] rounded-full bg-cyan-500/10 blur-[120px]"></div>
+
+<div className="pointer-events-none absolute left-0 bottom-[10%] h-[350px] w-[350px] rounded-full bg-indigo-500/10 blur-[120px]"></div>
+
+  <div className="grid-background fixed inset-0 opacity-20"></div>
+
+    <div
+      className="pointer-events-none fixed left-1/2 top-1/2 z-0 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+      style={glowStyle}
+    />
+
 
       {/* NAVBAR */}
       <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-2xl shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
@@ -37,41 +73,122 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-32 text-center">
 
         {/* GLOW EFFECT */}
-        <div className="absolute top-1/3 h-[500px] w-[500px] rounded-full bg-blue-600/20 blur-3xl"></div>
+        <div className="absolute top-1/3 h-[500px] w-[500px] animate-pulse rounded-full bg-blue-600/20 blur-3xl"></div>
 
         <p className="relative mb-6 text-sm uppercase tracking-[0.4em] text-blue-500">
           ENGINEERED FOR INTELLIGENT SYSTEMS
         </p>
-      <Reveal>
-        <h1 className="relative max-w-6xl text-5xl font-bold leading-tight md:text-8xl">
+      
+        <h1 className="relative max-w-6xl text-5xl font-bold leading-tight tracking-tight md:text-8xl">
           Building the Future of
           <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(37,99,235,0.8)]"> AI Automation</span>
         </h1>
-      </Reveal>
+      
         <p className="relative mt-8 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
           Chidakara designs premium AI systems, intelligent workflows,
           automation infrastructures, dashboards, and modern digital solutions
           for forward-thinking businesses.
         </p>
 
-        <div className="relative mt-12 flex flex-wrap justify-center gap-4">
+       <div className="relative mt-12 flex flex-wrap justify-center gap-4">
 
-          <button className="rounded-full bg-blue-600 px-8 py-4 text-sm font-medium transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:shadow-[0_0_40px_rgba(37,99,235,0.5)]">"
-            Explore Solutions
-          </button>
+  <button className="rounded-full bg-blue-600 px-8 py-4 text-sm font-medium transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:shadow-[0_0_40px_rgba(37,99,235,0.5)]">
+    Explore Solutions
+  </button>
 
-          <button className="rounded-full border border-white/10 px-8 py-4 text-sm font-medium transition-all duration-300 hover:scale-105 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
-            View Showcase
-          </button>
+  <button className="rounded-full border border-white/10 px-8 py-4 text-sm font-medium transition-all duration-300 hover:scale-110 hover:border-white/30 hover:bg-white/5 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]">
+    View Showcase
+  </button>
+
+</div>
+        <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3">
+
+  <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
+    <p className="text-5xl font-bold text-blue-500">
+      {projects}+
+    </p>
+
+    <p className="mt-3 text-sm uppercase tracking-[0.3em] text-gray-500">
+      Intelligent Systems
+    </p>
+  </div>
+
+  <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
+    <p className="text-5xl font-bold text-blue-500">
+      {automations}+
+    </p>
+
+    <p className="mt-3 text-sm uppercase tracking-[0.3em] text-gray-500">
+      AI Automations
+    </p>
+  </div>
+
+  <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
+    <p className="text-5xl font-bold text-blue-500">
+      {uptime}%
+    </p>
+
+    <p className="mt-3 text-sm uppercase tracking-[0.3em] text-gray-500">
+      Infrastructure Uptime
+    </p>
+  </div>
+
+</div>
+
+      </section>
+            {/* LIVE STATS SECTION */}
+
+      <section className="border-t border-white/10 bg-black px-6 py-24">
+
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+
+          {/* CARD 1 */}
+          <div className="group rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(37,99,235,0.25)]">
+
+            <h3 className="text-5xl font-bold text-blue-500">
+              {projects}+
+            </h3>
+
+            <p className="mt-4 text-gray-400">
+              AI Projects Engineered
+            </p>
+
+          </div>
+
+          {/* CARD 2 */}
+          <div className="group rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(37,99,235,0.25)]">
+
+            <h3 className="text-5xl font-bold text-blue-500">
+              {automations}+
+            </h3>
+
+            <p className="mt-4 text-gray-400">
+              Intelligent Automations
+            </p>
+
+          </div>
+
+          {/* CARD 3 */}
+          <div className="group rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(37,99,235,0.25)]">
+
+            <h3 className="text-5xl font-bold text-blue-500">
+              {uptime}%
+            </h3>
+
+            <p className="mt-4 text-gray-400">
+              Infrastructure Reliability
+            </p>
+
+          </div>
 
         </div>
 
       </section>
             {/* SOLUTIONS SECTION */}
-      <Reveal>
+      
       <section className="border-t border-white/10 bg-[#050505] px-6 py-32">
 
         <div className="mx-auto max-w-7xl">
@@ -155,9 +272,9 @@ export default function Home() {
         </div>
 
       </section>
-      </Reveal>
+      
             {/* SHOWCASE SECTION */}
-      <Reveal>
+      
       <section className="border-t border-white/10 bg-black px-6 py-32">
 
         <div className="mx-auto max-w-7xl">
@@ -182,10 +299,8 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-2">
 
             {/* SHOWCASE CARD 1 */}
-            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/30">
-
+            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.25)]">
               <div className="relative h-[300px] overflow-hidden bg-gradient-to-br from-blue-600/20 to-black">
-
                 <div className="absolute inset-0 flex items-center justify-center">
 
                   <div className="grid w-[80%] grid-cols-3 gap-4">
@@ -222,7 +337,7 @@ export default function Home() {
             </div>
 
             {/* SHOWCASE CARD 2 */}
-            <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/30">
+           <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(37,99,235,0.25)]">
               <div className="relative h-[300px] overflow-hidden bg-gradient-to-br from-blue-500/20 to-black">
 
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -271,10 +386,9 @@ export default function Home() {
         </div>
 
       </section>
-      </Reveal>
       
             {/* CASE STUDY SECTION */}
-      <Reveal>
+      
 
       <section className="border-t border-white/10 bg-[#050505] px-6 py-32">
 
@@ -407,9 +521,9 @@ export default function Home() {
         </div>
 
       </section>
-      </Reveal>
+      
             {/* TECH STACK SECTION */}
-      <Reveal>
+      
       <section className="border-t border-white/10 bg-black px-6 py-32">
 
         <div className="mx-auto max-w-7xl">
@@ -448,7 +562,7 @@ export default function Home() {
             ].map((tech) => (
               <div
                 key={tech}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-center transition hover:border-blue-500/40 hover:bg-white/[0.05]"
+                className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-center transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.2)]"
               >
                 <h3 className="text-2xl font-semibold">{tech}</h3>
               </div>
@@ -459,11 +573,11 @@ export default function Home() {
           {/* METRICS */}
           <div className="mt-24 grid gap-8 md:grid-cols-3">
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
 
               <h3 className="text-5xl font-bold text-blue-500">
-                AI
-              </h3>
+  {projects}+
+</h3>
 
               <p className="mt-4 text-gray-400">
                 Automation-First Architecture
@@ -471,11 +585,11 @@ export default function Home() {
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
 
               <h3 className="text-5xl font-bold text-blue-500">
-                Cloud
-              </h3>
+  {automations}+
+</h3>
 
               <p className="mt-4 text-gray-400">
                 Scalable Modern Infrastructure
@@ -483,11 +597,11 @@ export default function Home() {
 
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
 
               <h3 className="text-5xl font-bold text-blue-500">
-                24/7
-              </h3>
+  {uptime}%
+</h3>
 
               <p className="mt-4 text-gray-400">
                 Intelligent Operational Systems
@@ -500,10 +614,10 @@ export default function Home() {
         </div>
 
       </section>
-      </Reveal>
+      
       
             {/* CTA SECTION */}
-      <Reveal>
+      
       <section className="relative overflow-hidden border-t border-white/10 bg-[#050505] px-6 py-40">
 
         {/* BACKGROUND GLOW */}
@@ -543,7 +657,7 @@ export default function Home() {
         </div>
 
       </section>
-      </Reveal>
+      
             {/* FOOTER */}
       <footer className="border-t border-white/10 bg-black px-6 py-10">
 
@@ -578,6 +692,7 @@ export default function Home() {
         </div>
 
       </footer>
+      
     </main>
   );
 }
