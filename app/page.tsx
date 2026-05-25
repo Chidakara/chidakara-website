@@ -4,7 +4,7 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white overflow-hidden">
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
+      <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-2xl shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
           <div className="text-lg font-semibold tracking-[0.2em] text-white">
@@ -48,7 +48,7 @@ export default function Home() {
       <Reveal>
         <h1 className="relative max-w-6xl text-5xl font-bold leading-tight md:text-8xl">
           Building the Future of
-          <span className="text-blue-500"> AI Automation</span>
+          <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(37,99,235,0.8)]"> AI Automation</span>
         </h1>
       </Reveal>
         <p className="relative mt-8 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
             {/* CARD 1 */}
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-blue-500/50 hover:bg-white/[0.05]">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.15)]">
               <div className="mb-6 text-4xl">🤖</div>
 
               <h3 className="mb-4 text-2xl font-semibold">
@@ -109,7 +109,7 @@ export default function Home() {
             </div>
 
             {/* CARD 2 */}
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-blue-500/50 hover:bg-white/[0.05]">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.15)]">
               <div className="mb-6 text-4xl">⚡</div>
 
               <h3 className="mb-4 text-2xl font-semibold">
@@ -123,7 +123,7 @@ export default function Home() {
             </div>
 
             {/* CARD 3 */}
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-blue-500/50 hover:bg-white/[0.05]">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.15)]">
               <div className="mb-6 text-4xl">📊</div>
 
               <h3 className="mb-4 text-2xl font-semibold">
@@ -137,7 +137,7 @@ export default function Home() {
             </div>
 
             {/* CARD 4 */}
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-blue-500/50 hover:bg-white/[0.05]">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:-translate-y-3 hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.15)]">
               <div className="mb-6 text-4xl">🧠</div>
 
               <h3 className="mb-4 text-2xl font-semibold">
