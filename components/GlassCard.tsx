@@ -1,0 +1,24 @@
+import { ReactNode } from "react";
+
+interface GlassCardProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export default function GlassCard({
+  children,
+  className = "",
+}: GlassCardProps) {
+
+  return (
+
+    <div
+      className={`rounded-3xl border border-white/10 bg-black/40 backdrop-blur-2xl ${className}`}
+    >
+
+      {children}
+
+    </div>
+
+  );
+}
