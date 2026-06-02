@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import CursorGlow from "@/components/CursorGlow";
 export const metadata: Metadata = {
   icons: {
   icon: "/favicon.ico",
@@ -54,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white antialiased">
+        <CursorGlow />
         {children}
       </body>
     </html>

@@ -1,17 +1,18 @@
 "use client";
-
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
+ 
 
   return (
 
-    <nav className="fixed left-1/2 top-4 z-50 w-[92%] sm:w-[95%] max-w-7xl -translate-x-1/2">
+    <nav className="fixed left-1/2 top-4 z-[9999] w-[92%] sm:w-[95%] max-w-7xl -translate-x-1/2">
 
-      <div className="rounded-full border border-white/10 bg-black/50 backdrop-blur-2xl">
+      <div className="rounded-full border border-white/10 bg-black/80 backdrop-blur-2xl">
 
         <div className="flex items-center justify-between px-4 py-3 sm:px-6">
 
@@ -27,6 +28,7 @@ export default function Navbar() {
           {/* DESKTOP LINKS */}
 
           <div className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
+            
 
             <Link
               href="/solutions"
@@ -85,12 +87,7 @@ export default function Navbar() {
             className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] md:hidden"
           >
 
-            <div className="space-y-1">
-
-              <div className="h-[2px] w-5 rounded-full bg-white" />
-              <div className="h-[2px] w-5 rounded-full bg-white" />
-
-            </div>
+         
 
           </button>
 
@@ -136,7 +133,7 @@ export default function Navbar() {
 </Link>
           </div>
 
-        </div>
+              </div>
 
       </div>
 

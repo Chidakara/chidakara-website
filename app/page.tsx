@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Reveal from "@/components/Reveal";
+import AIChat from "@/components/AIChat";
+import BackgroundEffects from "@/components/BackgroundEffects";
+import FadeIn from "@/components/FadeIn";
+import AnimatedCounter from "@/components/AnimatedCounter";
 export default function Home() {
 
 
@@ -45,7 +49,18 @@ window.addEventListener("scroll", handleScroll);
   }, []);
 
   return (
-  <main className="animate-in fade-in duration-700 relative z-10 min-h-screen overflow-hidden bg-black text-white animate-[fadeIn_1s_ease]">
+  <main className="relative min-h-screen overflow-hidden bg-black px-6 text-white">
+    <BackgroundEffects />
+
+<div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+  <div className="absolute left-1/2 top-0 h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[160px]" />
+
+  <div className="absolute left-0 top-1/3 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[140px]" />
+
+  <div className="absolute bottom-0 right-0 h-[600px] w-[600px] rounded-full bg-blue-600/10 blur-[140px]" />
+
+</div>
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
   <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[110px]" />
@@ -62,7 +77,7 @@ window.addEventListener("scroll", handleScroll);
 
 <div className="pointer-events-none fixed inset-0 overflow-hidden">
 
-  <div className="absolute left-[-10%] top-[10%] h-[500px] w-[500px] rounded-full bg-blue-500/5 blur-3xl opacity-40 blur-[110px] "></div>
+  <div className="absolute left-[-10%] top-[10%] h-[500px] w-[500px] rounded-full bg-blue-500/5 opacity-40 blur-[110px] "></div>
 
   <div className="absolute right-[-10%] top-[30%] h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[110px] animate-pulse"></div>
 
@@ -116,7 +131,7 @@ window.addEventListener("scroll", handleScroll);
 
       {/* NAVBAR */}
       <nav
-  className={`fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2 rounded-2xl border transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] ${
+  className={`fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2 rounded-2xl border transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] ${
     scrolled
   ? "border-white/10 bg-black/40 py-3 backdrop-blur-xl shadow-[0_10px_50px_rgba(0,0,0,0.6)]"
   : "border-white/10 bg-black/40 py-4 backdrop-blur-xl"
@@ -135,7 +150,7 @@ window.addEventListener("scroll", handleScroll);
 >
 <span>Solutions</span>
 
-<span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
+<span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
             </a>
 
             <a
@@ -144,7 +159,7 @@ window.addEventListener("scroll", handleScroll);
 >
                <span>Showcase</span>
 
-  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
+  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
 </a>
 
             <a
@@ -152,7 +167,7 @@ window.addEventListener("scroll", handleScroll);
   className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
 >
               <span>Case Studies</span>
-  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
+  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
 </a>
             
 
@@ -161,11 +176,11 @@ window.addEventListener("scroll", handleScroll);
   className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
 >
               <span>Contact</span>
-            <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
+            <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
 </a>
           </div>
 
-          <button className="rounded-full border border-blue-500 bg-blue-600 px-5 py-2 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)]">
+          <button className="rounded-full border border-blue-500 bg-blue-600 px-5 py-2 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)]">
             Let’s Build
           </button>
 <div className="absolute inset-0 opacity-[0.03]">
@@ -177,360 +192,98 @@ window.addEventListener("scroll", handleScroll);
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-36 md:pt-44 text-center">
-<div className="absolute left-[10%] top-[20%] h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
+      <FadeIn>
+     <section className="relative z-10 flex min-h-[92vh] items-center pt-32">
 
-<div className="absolute right-[15%] top-[30%] h-2 w-2 animate-pulse rounded-full bg-blue-500" />
+  <div className="mx-auto max-w-7xl">
 
-<div className="absolute bottom-[20%] left-[30%] h-2 w-2 animate-pulse rounded-full bg-white/60" />
-        {/* GLOW EFFECT */}
+    <div className="max-w-5xl">
 
+      {/* LABEL */}
 
-        <p className="relative mb-6 text-sm uppercase tracking-[0.25em] text-blue-500">
-          ENGINEERED FOR INTELLIGENT SYSTEMS
-        </p>
-      
-        <h1 className="relative max-w-6xl text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl xl:text-8xl">
-          Building the Future of
-          <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(37,99,235,0.8)]"> AI Automation</span>
-        </h1>
-      
-        <p className="relative mt-8 max-w-2xl px-2 text-base leading-relaxed text-gray-400 sm:text-lg md:px-0 md:text-xl">
-          Chidakara designs premium AI systems, intelligent workflows,
-          automation infrastructures, dashboards, and modern digital solutions
-          for forward-thinking businesses.
+      <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 backdrop-blur-xl">
+
+        <div className="h-2 w-2 rounded-full bg-cyan-400" />
+
+        <p className="text-xs uppercase tracking-[0.35em] text-cyan-400">
+
+          ENTERPRISE AI INFRASTRUCTURE
+
         </p>
 
-       <div className="relative mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-<a
-  href="#solutions"
-  className="group relative overflow-hidden rounded-full bg-blue-600 px-8 py-4 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:bg-blue-500 hover:shadow-[0_0_60px_rgba(37,99,235,0.45)]"
->
-
-  <div className="absolute inset-0 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent)] translate-x-[-120%] transition-transform duration-1000 group-hover:translate-x-[120%]"></div>
-
-  <span className="relative z-10">
-    Explore Solutions
-  </span>
-
-</a>
-<a
-  href="#showcase"
-  className="group relative overflow-hidden rounded-full border border-white/8 bg-black/60 backdrop-blur-2xl px-8 py-4 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.2)]"
->
-
-  <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)]"></div>
-
-  <span className="relative z-10">
-    View Showcase
-  </span>
-
-</a>
-</div>
-        <div className="relative z-10 mt-24 grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-          
-
-  <div className="group rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
-    <p className="text-5xl font-bold text-blue-500 drop-shadow-[0_0_20px_rgba(37,99,235,0.8)]">
-      {projects}+
-    </p>
-
-    <p className="mt-3 text-sm uppercase tracking-[0.25em] text-gray-500">
-      Intelligent Systems
-    </p>
-  </div>
-
-  <div className="group rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
-    <p className="text-5xl font-bold text-blue-500 drop-shadow-[0_0_20px_rgba(37,99,235,0.8)]">
-      {automations}+
-    </p>
-
-    <p className="mt-3 text-sm uppercase tracking-[0.25em] text-gray-500">
-      AI Automations
-    </p>
-  </div>
-
-  <div className="group rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
-    <p className="text-5xl font-bold text-blue-500 drop-shadow-[0_0_20px_rgba(37,99,235,0.8)]">
-      {uptime}%
-    </p>
-
-    <p className="mt-3 text-sm uppercase tracking-[0.25em] text-gray-500">
-      Infrastructure Uptime
-    </p>
-  </div>
-
-</div>
-{/* FLOATING AI DASHBOARD */}
-
-<div className="relative mt-28 w-full max-w-6xl">
-
-  {/* OUTER GLOW */}
-  <div className="absolute inset-0 rounded-[40px] bg-blue-500/5 blur-3xl opacity-40"></div>
-
-  <div className="relative overflow-hidden rounded-[40px] border border-white/8 bg-black/60 backdrop-blur-2xl shadow-[0_20px_120px_rgba(0,0,0,0.6)]">
-
-    {/* TOP BAR */}
-    <div className="flex items-center justify-between border-b border-white/10 px-8 py-5">
-
-      <div>
-        <p className="text-sm text-gray-400">
-          Chidakara Intelligence Core
-        </p>
-
-        <h3 className="mt-1 text-xl font-semibold">
-          AI Operations Dashboard
-        </h3>
       </div>
 
-      <div className="rounded-full border border-blue-500/30 bg-blue-500/5 blur-3xl opacity-40 px-4 py-2 text-sm text-blue-400">
-        Live Infrastructure
-      </div>
+      {/* TITLE */}
 
-    </div>
+      <h1 className="text-6xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-8xl">
 
-    {/* DASHBOARD CONTENT */}
-    <div className="grid gap-6 p-6 md:p-8 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        Engineering
+        <span className="text-blue-500"> Intelligent</span>
+        <br />
 
-      {/* LEFT PANEL */}
-      <div className="space-y-6">
+        Systems for
+        <span className="text-cyan-400"> Modern Enterprises</span>
 
-        <div className="group relative overflow-hidden rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/40 p-6 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-cyan-400/30 hover:bg-white/[0.03] hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]">
+      </h1>
 
-          <div className="mb-4 flex items-center justify-between">
-            <p className="text-sm text-gray-400">
-              Automation Status
-            </p>
+      {/* DESCRIPTION */}
 
-            <div className="relative flex h-3 w-3">
+      <p className="mt-10 max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
 
-  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+        Chidakara develops scalable AI infrastructures,
+        enterprise automation ecosystems, operational intelligence systems,
+        predictive analytics platforms, and futuristic digital architectures.
 
-  <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400 shadow-[0_0_15px_rgba(74,222,128,0.8)]"></span>
+      </p>
 
-</div>
-          </div>
+      {/* BUTTONS */}
 
-          <h3 className="text-4xl font-bold text-white">
-            48+
-          </h3>
+      <div className="mt-14 flex flex-wrap gap-6">
 
-          <p className="mt-2 text-sm text-gray-500">
-            Intelligent workflows active
-          </p>
+        <button className="rounded-full bg-blue-600 px-10 py-5 font-medium transition-all duration-300 hover:scale-[1.03] hover:bg-blue-500">
 
-        </div>
+          Start Building
 
-        <div className="group relative overflow-hidden rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/40 p-6 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-cyan-400/30 hover:bg-white/[0.03] hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]">
+        </button>
 
-          <p className="mb-4 text-sm text-gray-400">
-            AI Processing
-          </p>
+        <button className="rounded-full border border-white/10 bg-white/[0.03] px-10 py-5 font-medium backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05]">
 
-          <div className="space-y-4">
+          Explore Solutions
 
-            <div>
-              <div className="mb-2 flex justify-between text-sm">
-                <span className="leading-relaxed text-gray-400">
-                  Neural Analysis
-                </span>
-
-                <span className="text-blue-400">
-                  92%
-                </span>
-              </div>
-
-              <div className="h-2 rounded-full bg-white/10">
-                <div className="relative h-2 w-[92%] overflow-hidden rounded-full bg-blue-500">
-
-  
-
-</div>
-              </div>
-            </div>
-
-            <div>
-              <div className="mb-2 flex justify-between text-sm">
-                <span className="leading-relaxed text-gray-400">
-                  Automation Load
-                </span>
-
-                <span className="text-cyan-400">
-                  78%
-                </span>
-              </div>
-
-              <div className="h-2 rounded-full bg-white/10">
-                <div className="relative h-2 w-[78%] overflow-hidden rounded-full bg-cyan-400">
-
-
-</div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+        </button>
 
       </div>
-      
 
-      {/* CENTER PANEL */}
-      <div className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-gradient-to-br from-blue-500/10 to-black p-6">
+      {/* METRICS */}
 
-        <div className="mb-6 flex items-center justify-between">
+{/* METRICS */}
 
-          <div>
-            <p className="text-sm text-gray-400">
-              Intelligence Activity
-            </p>
+<div className="mt-20 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
 
-            <h3 className="mt-1 text-[1.75rem] font-semibold leading-tight">
-              Live AI Systems
-            </h3>
-          </div>
+  <AnimatedCounter
+    end={48}
+    suffix="+"
+    label="AI Systems"
+  />
 
-          <div className="rounded-full bg-blue-500/5 blur-3xl opacity-40 px-3 py-1 text-xs text-blue-400">
-            Active
-          </div>
+  <AnimatedCounter
+    end={32}
+    suffix="M"
+    label="AI Events"
+  />
 
-        </div>
-        <div className="mb-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+  <AnimatedCounter
+    end={99}
+    suffix="%"
+    label="Infrastructure Uptime"
+  />
 
-  <div className="rounded-2xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/30 p-4">
+  <AnimatedCounter
+    end={24}
+    suffix="/7"
+    label="Realtime Monitoring"
+  />
 
-    <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-      Requests
-    </p>
-
-    <h4 className="mt-2 text-[1.75rem] font-semibold leading-tight text-white">
-      2.4M
-    </h4>
-
-  </div>
-
-  <div className="rounded-2xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/30 p-4">
-
-    <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-      AI Load
-    </p>
-
-    <h4 className="mt-2 text-[1.75rem] font-semibold leading-tight text-cyan-400">
-      84%
-    </h4>
-
-  </div>
-
-  <div className="rounded-2xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/30 p-4">
-
-    <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-      Runtime
-    </p>
-
-    <h4 className="mt-2 text-[1.75rem] font-semibold leading-tight text-blue-400">
-      24/7
-    </h4>
-
-  </div>
-
-</div>
-
-        {/* VISUAL GRAPH */}
-        <div className="relative mt-8 h-[260px] rounded-3xl border border-white/5 bg-black/20 p-4">
-        <div className="absolute inset-0">
-
-  <div className="absolute top-1/4 h-[1px] w-full bg-white/5"></div>
-
-  <div className="absolute top-2/4 h-[1px] w-full bg-white/5"></div>
-
-  <div className="absolute top-3/4 h-[1px] w-full bg-white/5"></div>
-
-</div>
-          <div className="absolute bottom-0 left-0 right-0 top-0 flex items-end justify-between gap-3">
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(37,99,235,0.08),transparent)]"></div>
-
-            {[40, 65, 55, 80, 72, 95, 88].map((height, i) => (
-
-<div
-  key={i}
-  className="group relative w-full overflow-hidden rounded-t-2xl bg-gradient-to-t from-blue-600 via-cyan-400 to-cyan-200 transition-all duration-700 hover:scale-[1.03] active:scale-[0.98] hover:shadow-[0_0_35px_rgba(37,99,235,0.6)]"
-  style={{
-    height: `${height}%`,
-  }}
->
-</div>
-
-))}
-
-</div>
-</div>
-</div>
-{/* RIGHT PANEL */}
-<div className="space-y-6">
-
-        <div className="group relative overflow-hidden rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/40 p-6 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-cyan-400/30 hover:bg-white/[0.03] hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]">
-
-          <div className="mb-4 flex items-center justify-between">
-
-            <p className="text-sm text-gray-400">
-              Infrastructure
-            </p>
-
-            <span className="text-sm text-green-400">
-              Stable
-            </span>
-
-          </div>
-
-          <div className="space-y-4">
-
-            {[
-              "AI Assistants",
-              "Workflow Engine",
-              "Analytics Core",
-              "Cloud Systems",
-            ].map((item) => (
-
-              <div
-                key={item}
-                className="flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.03] px-4 py-3"
-              >
-
-                <span className="text-sm text-gray-300">
-                  {item}
-                </span>
-
-                <div className="relative flex h-2 w-2">
-
-  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-
-  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
-
-</div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-        <div className="group relative overflow-hidden rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/40 p-6 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-cyan-400/30 hover:bg-white/[0.03] hover:shadow-[0_0_40px_rgba(34,211,238,0.12)]">
-
-          <p className="mb-4 text-sm text-gray-400">
-            Uptime Reliability
-          </p>
-
-          <h3 className="text-5xl font-bold text-blue-500">
-            99%
-          </h3>
-
-          <p className="mt-3 text-gray-500">
-            Enterprise-grade infrastructure uptime
-          </p>
-
-        </div>
 
       </div>
 
@@ -538,14 +291,13 @@ window.addEventListener("scroll", handleScroll);
 
   </div>
 
-</div>
-
-      </section>
+</section>
+</FadeIn>
 {/* CASE STUDIES SECTION */}
 
 <section
   id="projects"
-  className="border-t border-white/5 bg-black px-6 py-24 md:py-24 md:py-32"
+  className="relative z-10 border-t border-white/5 bg-black px-6 py-24 md:py-24 md:py-32"
 >
 
   <div className="mx-auto max-w-7xl">
@@ -567,7 +319,7 @@ window.addEventListener("scroll", handleScroll);
 
     </div>
 
-    <div className="grid gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-3">
 
       {/* CARD 1 */}
 
@@ -707,7 +459,7 @@ window.addEventListener("scroll", handleScroll);
 <Reveal>
 {/* SOLUTIONS SECTION */}
       
-      <section id="solutions" className="border-t border-transparent bg-[#050505] px-6 py-24 md:py-24 py-24 md:py-32 md:py-32">
+      <section id="solutions" className="relative z-10 border-t border-transparent bg-[#050505] px-6 py-24 md:py-32">
 
         <div className="mx-auto max-w-7xl">
 
@@ -727,10 +479,11 @@ window.addEventListener("scroll", handleScroll);
             </p>
           </div>
 
-          <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-4">
 
             {/* CARD 1 */}
             <div
+        
   className="group relative overflow-hidden rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_60px_rgba(37,99,235,0.18)] before:absolute before:inset-0 before:opacity-0 before:transition-opacity before:duration-700 before:content-[''] before:bg-[radial-gradient(circle_at_var(--x)_var(--y),rgba(37,99,235,0.18),transparent_40%)] hover:before:opacity-100"
   style={
     {
@@ -756,7 +509,7 @@ window.addEventListener("scroll", handleScroll);
             </div>
 
             {/* CARD 2 */}
-            <div className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
+            <div className="rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-2xl p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
               <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/5">
 
   <div className="h-6 w-6 rotate-45 rounded-sm bg-cyan-400/70 shadow-[0_0_20px_rgba(34,211,238,0.6)]"></div>
@@ -774,7 +527,7 @@ window.addEventListener("scroll", handleScroll);
             </div>
 
             {/* CARD 3 */}
-            <div className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
+            <div className="rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-2xl p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
               <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-indigo-400/20 bg-indigo-400/5">
 
   <div className="flex items-end gap-[3px]">
@@ -800,7 +553,7 @@ window.addEventListener("scroll", handleScroll);
             </div>
 
             {/* CARD 4 */}
-            <div className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
+            <div className="rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-2xl p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/50 hover:bg-white/[0.05] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]">
               <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-400/20 bg-violet-400/5">
 
   <div className="grid grid-cols-2 gap-1">
@@ -833,7 +586,7 @@ window.addEventListener("scroll", handleScroll);
       <Reveal>
             {/* SHOWCASE SECTION */}
       
-      <section id="showcase" className="relative border-t border-transparent bg-black px-6 py-24 md:py-24 md:py-32">
+      <section id="showcase" className="relative z-10 border-t border-transparent bg-black px-6 py-24 md:py-24 md:py-32">
 
         <div className="mx-auto max-w-7xl">
           {/* FLOATING SYSTEM ORBS */}
@@ -887,7 +640,7 @@ window.addEventListener("scroll", handleScroll);
 
   </div>
 
-  <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+  <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-4">
 
     {/* STEP 1 */}
     <div className="group relative overflow-hidden rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/30 p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-cyan-400/30">
@@ -1187,7 +940,7 @@ window.addEventListener("scroll", handleScroll);
             {/* CASE STUDY SECTION */}
       
 
-      <section id="case-study" className="border-t border-transparent bg-[#050505] px-6 py-24 md:py-24 md:py-32">
+      <section id="case-study" className="relative z-10 border-t border-transparent bg-[#050505] px-6 py-24 md:py-24 md:py-32">
 
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
 
@@ -1322,7 +1075,7 @@ window.addEventListener("scroll", handleScroll);
       <Reveal>
             {/* TECH STACK SECTION */}
       
-      <section className="border-t border-transparent bg-black px-6 py-24 md:py-32">
+      <section className="relative z-10 border-t border-transparent bg-black px-6 py-24 md:py-32">
 
         <div className="mx-auto max-w-7xl">
 
@@ -1346,7 +1099,7 @@ window.addEventListener("scroll", handleScroll);
           </div>
 
           {/* TECH GRID */}
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
             {[
               "Next.js",
@@ -1360,7 +1113,7 @@ window.addEventListener("scroll", handleScroll);
             ].map((tech) => (
               <div
                 key={tech}
-                className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.2)]"
+                className="rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-2xl p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(37,99,235,0.2)]"
               >
                 <h3 className="text-[1.75rem] font-semibold leading-tight">{tech}</h3>
               </div>
@@ -1371,7 +1124,7 @@ window.addEventListener("scroll", handleScroll);
           {/* METRICS */}
           <div className="mt-24 grid gap-6 md:p-8 md:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
 
-            <div className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
+            <div className="rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-2xl p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
 
               <h3 className="text-5xl font-bold text-blue-500">
   {projects}+
@@ -1383,7 +1136,7 @@ window.addEventListener("scroll", handleScroll);
 
             </div>
 
-            <div className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
+            <div className="rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-2xl p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
 
               <h3 className="text-5xl font-bold text-blue-500">
   {automations}+
@@ -1395,7 +1148,7 @@ window.addEventListener("scroll", handleScroll);
 
             </div>
 
-            <div className="rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-white/[0.03] p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
+            <div className="rounded-3xl border border-white/8 bg-white/[0.03] backdrop-blur-2xl p-6 md:p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/30 hover:shadow-[0_0_35px_rgba(37,99,235,0.15)]">
 
               <h3 className="text-5xl font-bold text-blue-500">
   {uptime}%
@@ -1417,7 +1170,7 @@ window.addEventListener("scroll", handleScroll);
       <Reveal>
             {/* CTA SECTION */}
       
-      <section id="contact" className="relative overflow-hidden border-t border-transparent bg-[#050505] px-6 py-40">
+      <section id="contact" className="relative z-10 overflow-hidden border-t border-transparent bg-[#050505] px-6 py-40">
 
         {/* BACKGROUND GLOW */}
         <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-[110px]"></div>
@@ -1442,7 +1195,7 @@ window.addEventListener("scroll", handleScroll);
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-5">
-            <button className="group relative overflow-hidden rounded-full bg-blue-600 px-8 py-4 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-1 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] active:scale-[0.98] hover:bg-blue-500 hover:shadow-[0_0_60px_rgba(37,99,235,0.45)]">
+            <button className="group relative overflow-hidden rounded-full bg-blue-600 px-8 py-4 text-sm font-medium tracking-wide transition-all duration-500   hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] active:scale-[0.98] hover:bg-blue-500 hover:shadow-[0_0_60px_rgba(37,99,235,0.45)]">
 
   <div className="absolute inset-0 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent)] translate-x-[-120%] transition-transform duration-1000 group-hover:translate-x-[120%]"></div>
 
@@ -1452,7 +1205,7 @@ window.addEventListener("scroll", handleScroll);
 
 </button>
 
-<button className="group relative overflow-hidden rounded-full border border-white/8 bg-black/60 backdrop-blur-2xl px-8 py-4 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(37,99,235,0.25)]">
+<button className="group relative overflow-hidden rounded-full border border-white/8 bg-black/60 backdrop-blur-2xl px-8 py-4 text-sm font-medium tracking-wide transition-all duration-500   hover:-translate-y-2 hover:scale-[1.015] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.98] hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(37,99,235,0.25)]">
 
   <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)]"></div>
 
@@ -1566,7 +1319,7 @@ window.addEventListener("scroll", handleScroll);
   </div>
 
 </footer>
-      
+      <AIChat />
     </main>
   );
 }
