@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import MetricCard from "@/components/MetricCard";
 import BackgroundEffects from "@/components/BackgroundEffects";
 import {
@@ -18,41 +20,46 @@ export const metadata = {
 const solutions = [
   {
     title: "AI Automation Systems",
-    desc: "Intelligent workflow infrastructures engineered for scalable business automation and operational efficiency.",
+    desc: "...",
     icon: Bot,
+    route: "/solutions/workflow-automation",
   },
 
   {
     title: "Analytics Infrastructure",
-    desc: "Realtime dashboards, data visibility layers, reporting systems, and intelligent monitoring platforms.",
+    desc: "...",
     icon: BarChart3,
+    route: "/solutions/ai-dashboards",
   },
 
   {
     title: "AI Assistants",
-    desc: "Conversational AI systems designed for customer support, operations, onboarding, and workflow integration.",
+    desc: "...",
     icon: MessageSquare,
+    route: "/solutions/ai-assistants",
   },
 
   {
     title: "Workflow Intelligence",
-    desc: "AI-powered orchestration systems connecting business processes, notifications, and operational pipelines.",
+    desc: "...",
     icon: Workflow,
+    route: "/solutions/workflow-automation",
   },
 
   {
     title: "Infrastructure Monitoring",
-    desc: "Enterprise-grade visibility systems for uptime monitoring, analytics, infrastructure tracking, and reliability.",
+    desc: "...",
     icon: Activity,
+    route: "/architecture/insights-scaling",
   },
 
   {
     title: "Custom AI Platforms",
-    desc: "Tailored AI ecosystems engineered for enterprise operations, analytics systems, and scalable automation.",
+    desc: "...",
     icon: Cpu,
+    route: "/solutions/intelligent-systems",
   },
 ];
-
 export default function SolutionsPage() {
   return (
     <>
@@ -117,10 +124,11 @@ export default function SolutionsPage() {
 
                 return (
 
-                  <div
-                    key={index}
-                    className="group rounded-[2rem] border border-white/10 bg-black/40 p-8 backdrop-blur-2xl transition-all duration-700 hover:-translate-y-2 hover:border-blue-500/30 hover:bg-blue-500/[0.03] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]"
-                  >
+                  <Link
+  href={item.route}
+  key={index}
+  className="group rounded-[2rem] border border-white/10 bg-black/40 p-8 backdrop-blur-2xl transition-all duration-700 hover:-translate-y-2 hover:border-blue-500/30 hover:bg-blue-500/[0.03] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]"
+>
 
                     {/* ICON */}
 
@@ -144,7 +152,7 @@ export default function SolutionsPage() {
 
                     </p>
 
-                  </div>
+                  </Link>
 
                 );
 
@@ -167,25 +175,19 @@ export default function SolutionsPage() {
               <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
                 {[
-                  ["48+", "AI Systems"],
-                  ["99%", "Infrastructure Uptime"],
-                  ["3.2M", "Data Events"],
-                  ["24/7", "Realtime Monitoring"],
-                ].map(([number, label], index) => (
+  ["48+", "AI Systems"],
+  ["99%", "Infrastructure Uptime"],
+  ["3.2M", "Data Events"],
+  ["24/7", "Realtime Monitoring"],
+].map(([number, label], index) => (
 
-                  <div
-                    key={index}
-                    className="rounded-[2rem] border border-white/10 bg-black/30 p-10 transition-all duration-500 hover:border-blue-500/20 hover:bg-blue-500/[0.03]"
-                  >
+  <MetricCard
+    key={index}
+    number={number}
+    label={label}
+  />
 
-                    <MetricCard
-                      number={number}
-                      label={label}
-                    />
-
-                  </div>
-
-                ))}
+))}
 
               </div>
 
@@ -246,6 +248,7 @@ export default function SolutionsPage() {
         </section>
 
       </main>
+      <CTASection />
 
       <Footer />
     </>

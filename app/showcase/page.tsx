@@ -1,5 +1,8 @@
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { showcaseItems } from "@/lib/showcase";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import BackgroundEffects from "@/components/BackgroundEffects";
 import {
   Brain,
@@ -13,56 +16,6 @@ import {
 export const metadata = {
   title: "Showcase — Chidakara",
 };
-
-const showcaseItems = [
-  {
-    title: "AI Operations Dashboard",
-    description:
-      "Realtime enterprise monitoring systems powered by predictive intelligence and AI analytics.",
-    icon: MonitorSmartphone,
-    tag: "Realtime Intelligence",
-  },
-
-  {
-    title: "Autonomous AI Agents",
-    description:
-      "Enterprise AI agents capable of workflow execution, automation orchestration, and operational reasoning.",
-    icon: Bot,
-    tag: "AI Agents",
-  },
-
-  {
-    title: "Workflow Automation Engine",
-    description:
-      "AI-driven orchestration pipelines connecting enterprise infrastructure, alerts, and intelligent actions.",
-    icon: Workflow,
-    tag: "Automation Systems",
-  },
-
-  {
-    title: "Predictive Intelligence",
-    description:
-      "Advanced analytics systems designed for forecasting, anomaly detection, and operational optimization.",
-    icon: Brain,
-    tag: "Predictive AI",
-  },
-
-  {
-    title: "Enterprise Data Infrastructure",
-    description:
-      "Scalable AI-ready data ecosystems engineered for analytics, monitoring, and intelligent decision systems.",
-    icon: Database,
-    tag: "Infrastructure",
-  },
-
-  {
-    title: "AI Surveillance & Monitoring",
-    description:
-      "Realtime AI visibility systems designed for operational awareness and enterprise monitoring.",
-    icon: Radar,
-    tag: "Operational Visibility",
-  },
-];
 
 export default function ShowcasePage() {
   return (
@@ -218,11 +171,10 @@ export default function ShowcasePage() {
                 ["99%", "Infrastructure Reliability"],
               ].map(([number, label], index) => (
 
-                <div
-                  key={index}
-                  className="rounded-[2rem] border border-white/10 bg-black/30 p-8 transition-all duration-500 hover:border-blue-500/20 hover:bg-blue-500/[0.03]"
-                >
-
+               <div
+  key={index}
+  className="group overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 p-8 backdrop-blur-2xl transition-all duration-700 hover:-translate-y-2 hover:border-blue-500/30 hover:bg-blue-500/[0.03] hover:shadow-[0_20px_80px_rgba(37,99,235,0.18)]"
+>
                   <h3 className="text-5xl font-bold text-white">
 
                     {number}
@@ -274,18 +226,22 @@ export default function ShowcasePage() {
 
             <div className="mt-12 flex flex-wrap justify-center gap-6">
 
-              <button className="rounded-full bg-blue-600 px-10 py-5 font-medium transition-all duration-300 hover:scale-[1.03] hover:bg-blue-500">
+              <Link
+  href="/contact"
+  className="rounded-full bg-blue-600 px-10 py-5 font-medium transition-all duration-300 hover:scale-[1.03] hover:bg-blue-500"
+>
+  Start Building
+</Link>
+                
 
-                Start Building
+              <Link
+  href="/solutions"
+  className="rounded-full border border-white/10 px-10 py-5 font-medium transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]"
+>
+  View AI Systems
+</Link>
 
-              </button>
-
-              <button className="rounded-full border border-white/10 px-10 py-5 font-medium transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]">
-
-                View AI Systems
-
-              </button>
-
+               
             </div>
 
           </div>
@@ -293,6 +249,7 @@ export default function ShowcasePage() {
         </section>
 
       </main>
+      <CTASection />
 
       <Footer />
     </>

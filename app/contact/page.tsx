@@ -1,216 +1,250 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BackgroundEffects from "@/components/BackgroundEffects";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  ArrowUpRight,
-  Clock3,
-} from "lucide-react";
-
-export const metadata = {
-  title: "Contact — Chidakara",
-};
-
-const contactCards = [
-  {
-    title: "Enterprise Consultation",
-    value: "AI Strategy Session",
-    icon: Phone,
-  },
-
-  {
-    title: "Email Intelligence",
-    value: "hello.chidakara@gmail.com",
-    icon: Mail,
-  },
-
-  {
-    title: "Operations Location",
-    value: "Hyderabad, India",
-    icon: MapPin,
-  },
-
-  {
-    title: "Availability",
-    value: "24/7 AI Systems",
-    icon: Clock3,
-  },
-];
+import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const router = useRouter();
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  if (!formRef.current) return;
+
+  setLoading(true);
+
+try {
+  const formData = {
+  user_name: (
+    formRef.current.elements.namedItem("user_name") as HTMLInputElement
+  ).value,
+
+  user_email: (
+    formRef.current.elements.namedItem("user_email") as HTMLInputElement
+  ).value,
+
+  company: (
+    formRef.current.elements.namedItem("company") as HTMLInputElement
+  ).value,
+
+  project_type: (
+    formRef.current.elements.namedItem("project_type") as HTMLSelectElement
+  ).value,
+
+  budget: (
+    formRef.current.elements.namedItem("budget") as HTMLSelectElement
+  ).value,
+
+  timeline: (
+    formRef.current.elements.namedItem("timeline") as HTMLSelectElement
+  ).value,
+
+  message: (
+    formRef.current.elements.namedItem("message") as HTMLTextAreaElement
+  ).value,
+};
+console.log("SERVICE ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+console.log("TEMPLATE ID:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
+console.log("PUBLIC KEY:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  const result = await emailjs.send(
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+  formData,
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+);
+  console.log("SUCCESS!", result);
+
+formRef.current.reset();
+
+setSuccess(true);
+
+router.push("/contact/success");
+} catch (error: any) {
+  console.error("FULL EMAIL ERROR:", error);
+
+  alert(JSON.stringify(error));
+} 
+ finally {
+    setLoading(false);
+  }
+};
   return (
     <>
       <Navbar />
 
-      <main className="relative min-h-screen overflow-hidden bg-black px-6 pb-24 pt-52 text-white">
-      <BackgroundEffects />
+      <main className="min-h-screen overflow-hidden bg-black px-6 py-32 text-white">
+
         {/* BACKGROUND */}
 
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
-          <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[140px]" />
-
-          <div className="absolute left-0 bottom-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[120px]" />
-
+        <div className="absolute inset-0 opacity-[0.08]">
+          <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:80px_80px]" />
         </div>
 
-        {/* HERO */}
+        {/* CONTENT */}
 
-        <section className="relative z-10">
+        <section className="relative z-10 mx-auto max-w-5xl">
 
-          <div className="mx-auto max-w-7xl">
+          <div className="mb-16">
 
-            <p className="text-sm uppercase tracking-[0.4em] text-cyan-400">
-
+            <p className="mb-6 text-sm uppercase tracking-[0.4em] text-cyan-400">
               CONTACT CHIDAKARA
-
             </p>
 
-            <h1 className="mt-8 max-w-5xl text-5xl font-semibold leading-tight tracking-[-0.04em] md:text-7xl">
-
-              Engineer Intelligent
-              <span className="text-blue-500"> AI Infrastructure</span>
-
+            <h1 className="max-w-4xl text-5xl font-semibold leading-tight md:text-7xl">
+              Build the Future with{" "}
+              <span className="text-blue-500">
+                Intelligent Systems
+              </span>
             </h1>
 
-            <p className="mt-10 max-w-3xl text-lg leading-relaxed text-gray-400">
-
-              Connect with Chidakara to build scalable AI ecosystems,
-              automation infrastructures, predictive intelligence systems,
-              and enterprise operational platforms.
-
+            <p className="mt-8 max-w-2xl text-lg leading-9 text-gray-400">
+              Let’s discuss AI infrastructure, automation systems,
+              analytics platforms, enterprise dashboards, and futuristic
+              operational ecosystems.
             </p>
 
           </div>
 
-        </section>
+          {/* FORM */}
 
-        {/* CONTACT GRID */}
+          <form
+            ref={formRef}
+            onSubmit={sendEmail}
+            className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl"
+          >
 
-        <section className="relative z-10 py-24">
+            <div className="grid gap-8 md:grid-cols-2">
 
-          <div className="mx-auto grid max-w-7xl gap-10 xl:grid-cols-[1fr_0.85fr]">
-
-            {/* FORM */}
-
-            <div className="overflow-hidden rounded-[3rem] border border-white/10 bg-black/40 p-10 backdrop-blur-2xl">
-
-              <div className="flex items-center justify-between">
-
-                <div>
-
-                  <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-
-                    ENTERPRISE INQUIRY
-
-                  </p>
-
-                  <h2 className="mt-4 text-4xl font-semibold">
-
-                    Start Your AI Project
-
-                  </h2>
-
-                </div>
-
-                <ArrowUpRight className="h-8 w-8 text-blue-400" />
-
-              </div>
-
-              {/* FORM */}
-
-              <div className="mt-14 grid gap-6">
+              <div>
+                <label className="mb-3 block text-sm text-gray-400">
+                  Full Name
+                </label>
 
                 <input
                   type="text"
-                  placeholder="Full Name"
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 outline-none transition-all duration-300 placeholder:text-gray-500 focus:border-blue-500/30"
+                  name="user_name"
+                  required
+                  placeholder="Enter your name"
+                  className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition-all duration-300 focus:border-blue-500"
                 />
+              </div>
+
+              <div>
+                <label className="mb-3 block text-sm text-gray-400">
+                  Email Address
+                </label>
 
                 <input
                   type="email"
-                  placeholder="Business Email"
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 outline-none transition-all duration-300 placeholder:text-gray-500 focus:border-blue-500/30"
+                  name="user_email"
+                  required
+                  placeholder="Enter your email"
+                  className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition-all duration-300 focus:border-blue-500"
                 />
-
-                <input
-                  type="text"
-                  placeholder="Organization / Company"
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 outline-none transition-all duration-300 placeholder:text-gray-500 focus:border-blue-500/30"
-                />
-
-                <textarea
-                  rows={6}
-                  placeholder="Describe your AI infrastructure or automation requirements..."
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 outline-none transition-all duration-300 placeholder:text-gray-500 focus:border-blue-500/30"
-                />
-
-                <button className="mt-4 rounded-full bg-blue-600 px-10 py-5 font-medium transition-all duration-300 hover:scale-[1.02] hover:bg-blue-500">
-
-                  Submit Enterprise Inquiry
-
-                </button>
-
               </div>
 
             </div>
 
-            {/* RIGHT PANEL */}
+            <div>
+              <label className="mb-3 block text-sm text-gray-400">
+                Company / Organization
+              </label>
 
-            <div className="space-y-8">
+              <input
+                type="text"
+                name="company"
+                placeholder="Company name"
+                className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition-all duration-300 focus:border-blue-500"
+              />
+            </div>
+            <div>
+  <label className="mb-3 block text-sm text-gray-400">
+    Project Type
+  </label>
 
-              {contactCards.map((item, index) => {
+  <select
+    name="project_type"
+    className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition-all duration-300 focus:border-blue-500"
+  >
+    <option>AI Assistant</option>
+    <option>Workflow Automation</option>
+    <option>AI Dashboard</option>
+    <option>Custom AI System</option>
+    <option>Other</option>
+  </select>
+</div>
+<div>
+  <label className="mb-3 block text-sm text-gray-400">
+    Estimated Budget
+  </label>
 
-                const Icon = item.icon;
+  <select
+    name="budget"
+    className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition-all duration-300 focus:border-blue-500"
+  >
+    <option>Not Sure Yet</option>
+<option>₹25,000 - ₹50,000</option>
+<option>₹50,000 - ₹1,00,000</option>
+<option>₹1,00,000 - ₹3,00,000</option>
+<option>₹3,00,000 - ₹10,00,000</option>
+<option>₹10,00,000+</option>
+  </select>
+</div>
+<div>
+  <label className="mb-3 block text-sm text-gray-400">
+    Desired Timeline
+  </label>
 
-                return (
+  <select
+    name="timeline"
+    className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition-all duration-300 focus:border-blue-500"
+  >
+    <option>ASAP</option>
+    <option>Within 1 Month</option>
+    <option>Within 3 Months</option>
+    <option>Flexible</option>
+  </select>
+</div>
 
-                  <div
-                    key={index}
-                    className="rounded-[2.5rem] border border-white/10 bg-black/40 p-8 backdrop-blur-2xl transition-all duration-500 hover:border-blue-500/20 hover:bg-blue-500/[0.03]"
-                  >
+            <div>
+              <label className="mb-3 block text-sm text-gray-400">
+                Project Details
+              </label>
 
-                    <div className="flex items-center justify-between">
-
-                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03]">
-
-                        <Icon className="h-7 w-7 text-blue-400" />
-
-                      </div>
-
-                      <ArrowUpRight className="h-5 w-5 text-gray-500" />
-
-                    </div>
-
-                    <p className="mt-10 text-sm uppercase tracking-[0.3em] text-cyan-400">
-
-                      {item.title}
-
-                    </p>
-
-                    <h3 className="mt-5 text-3xl font-semibold leading-tight">
-
-                      {item.value}
-
-                    </h3>
-
-                  </div>
-
-                );
-
-              })}
-
+              <textarea
+                name="message"
+                required
+                rows={6}
+                placeholder="Tell us about your project..."
+                className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4 outline-none transition-all duration-300 focus:border-blue-500"
+              />
             </div>
 
-          </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="rounded-full bg-blue-600 px-8 py-4 text-sm font-medium transition-all duration-500 hover:-translate-y-1 hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)]"
+            >
+              {loading ? "Sending..." : "Send Inquiry"}
+            </button>
+
+            {success && (
+              <p className="text-green-400">
+                Message sent successfully.
+              </p>
+            )}
+
+          </form>
 
         </section>
 
       </main>
-
-      <Footer />
     </>
   );
 }

@@ -3,7 +3,9 @@ export const metadata = {
   title: "Case Studies — Chidakara",
 };
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import BackgroundEffects from "@/components/BackgroundEffects";
 const caseStudies = [
   {
@@ -166,6 +168,8 @@ export default function CaseStudiesPage() {
       </div>
 
     </main>
+    
+    <CTASection />
 
     <Footer />
   </>

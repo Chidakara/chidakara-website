@@ -1,11 +1,11 @@
 "use client";
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Reveal from "@/components/Reveal";
 import AIChat from "@/components/AIChat";
-import BackgroundEffects from "@/components/BackgroundEffects";
+import LiveMetrics from "@/components/LiveMetrics";
 import FadeIn from "@/components/FadeIn";
-import AnimatedCounter from "@/components/AnimatedCounter";
+
 export default function Home() {
 
 
@@ -50,7 +50,7 @@ window.addEventListener("scroll", handleScroll);
 
   return (
   <main className="relative min-h-screen overflow-hidden bg-black px-6 text-white">
-    <BackgroundEffects />
+
 
 <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
@@ -131,7 +131,7 @@ window.addEventListener("scroll", handleScroll);
 
       {/* NAVBAR */}
       <nav
-  className={`fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2 rounded-2xl border transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] ${
+  className={`fixed top-4 left-1/2 z-[9999] w-[95%] max-w-7xl -translate-x-1/2 rounded-2xl border transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] ${
     scrolled
   ? "border-white/10 bg-black/40 py-3 backdrop-blur-xl shadow-[0_10px_50px_rgba(0,0,0,0.6)]"
   : "border-white/10 bg-black/40 py-4 backdrop-blur-xl"
@@ -143,47 +143,57 @@ window.addEventListener("scroll", handleScroll);
             CHIDAKARA
           </div>
 
-          <div className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
-            <a
-  href="#solutions"
-  className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
+         <div className="hidden items-center gap-6 text-sm text-gray-300 md:flex pointer-events-auto">
+
+  <Link
+    href="/solutions"
+    className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
+  >
+    <span>Solutions</span>
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/showcase"
+    className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
+  >
+    <span>Showcase</span>
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/case-studies"
+    className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
+  >
+    <span>Case Studies</span>
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/dashboard-demo"
+    className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
+  >
+    <span>Dashboard</span>
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 group-hover:w-full"></span>
+  </Link>
+
+  <Link
+    href="/contact"
+    className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
+  >
+    <span>Contact</span>
+    <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 group-hover:w-full"></span>
+  </Link>
+
+</div>
+
+          <Link
+  href="/contact"
+  className="rounded-full border border-blue-500 bg-blue-600 px-5 py-2 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)]"
 >
-<span>Solutions</span>
-
-<span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
-            </a>
-
-            <a
-  href="#showcase"
-  className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
->
-               <span>Showcase</span>
-
-  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
-</a>
-
-            <a
-  href="#case-study"
-  className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
->
-              <span>Case Studies</span>
-  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
-</a>
-            
-
-            <a
-  href="#contact"
-  className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
->
-              <span>Contact</span>
-            <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] group-hover:w-full"></span>
-</a>
-          </div>
-
-          <button className="rounded-full border border-blue-500 bg-blue-600 px-5 py-2 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)]">
-            Let’s Build
-          </button>
-<div className="absolute inset-0 opacity-[0.03]">
+  Let’s Build
+</Link>
+<div className="pointer-events-none absolute inset-0 opacity-[0.03]">
 
   <div className="grid-background h-full w-full" />
 
@@ -238,52 +248,76 @@ window.addEventListener("scroll", handleScroll);
 
       {/* BUTTONS */}
 
-      <div className="mt-14 flex flex-wrap gap-6">
+     <div className="mt-14 flex flex-wrap gap-6">
 
-        <button className="rounded-full bg-blue-600 px-10 py-5 font-medium transition-all duration-300 hover:scale-[1.03] hover:bg-blue-500">
+  {/* PRIMARY BUTTON */}
 
-          Start Building
+  <button className="group relative overflow-hidden rounded-full bg-blue-600 px-10 py-5 text-sm font-medium tracking-wide transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:bg-blue-500 hover:shadow-[0_0_60px_rgba(37,99,235,0.45)] active:scale-[0.98]">
 
-        </button>
+    <div className="absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent)] transition-transform duration-1000 group-hover:translate-x-[120%]"></div>
 
-        <button className="rounded-full border border-white/10 bg-white/[0.03] px-10 py-5 font-medium backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05]">
+    <span className="relative z-10">
+      Start Building
+    </span>
 
-          Explore Solutions
+  </button>
 
-        </button>
+  {/* SECONDARY BUTTON */}
 
-      </div>
+  <button className="group relative overflow-hidden rounded-full border border-white/8 bg-black/60 px-10 py-5 text-sm font-medium tracking-wide backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:border-blue-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(37,99,235,0.25)] active:scale-[0.98]">
+
+    <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)]"></div>
+
+    <span className="relative z-10">
+      Explore Solutions
+    </span>
+
+  </button>
+
+</div>
 
       {/* METRICS */}
 
-{/* METRICS */}
 
-<div className="mt-20 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
 
-  <AnimatedCounter
-    end={48}
-    suffix="+"
-    label="AI Systems"
-  />
+    </div>
 
-  <AnimatedCounter
-    end={32}
-    suffix="M"
-    label="AI Events"
-  />
+  </div>
 
-  <AnimatedCounter
-    end={99}
-    suffix="%"
-    label="Infrastructure Uptime"
-  />
+</section>
+</FadeIn>
+<LiveMetrics />
+<FadeIn>
+<section className="relative z-10 py-28">
 
-  <AnimatedCounter
-    end={24}
-    suffix="/7"
-    label="Realtime Monitoring"
-  />
+  <div className="mx-auto max-w-7xl">
 
+    <div className="rounded-[3rem] border border-white/10 bg-white/[0.03] p-12 backdrop-blur-xl">
+
+      <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
+        ABOUT CHIDAKARA
+      </p>
+
+      <h2 className="mt-6 max-w-4xl text-4xl font-semibold md:text-6xl">
+        Building Intelligent Infrastructure
+        for Modern Organizations
+      </h2>
+
+      <p className="mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
+        Chidakara engineers AI-powered systems that combine
+        automation, analytics, operational intelligence,
+        and modern software engineering into scalable
+        digital ecosystems.
+      </p>
+
+      <div className="mt-10">
+
+        <Link
+          href="/about"
+          className="rounded-full bg-blue-600 px-8 py-4 font-medium transition-all duration-300 hover:bg-blue-500"
+        >
+          Learn More About Us
+        </Link>
 
       </div>
 
@@ -459,7 +493,10 @@ window.addEventListener("scroll", handleScroll);
 <Reveal>
 {/* SOLUTIONS SECTION */}
       
-      <section id="solutions" className="relative z-10 border-t border-transparent bg-[#050505] px-6 py-24 md:py-32">
+      <section
+  id="solutions"
+  className="relative z-10 border-t border-transparent bg-[#050505] px-6 py-24 md:py-32"
+>
 
         <div className="mx-auto max-w-7xl">
 
@@ -586,7 +623,10 @@ window.addEventListener("scroll", handleScroll);
       <Reveal>
             {/* SHOWCASE SECTION */}
       
-      <section id="showcase" className="relative z-10 border-t border-transparent bg-black px-6 py-24 md:py-24 md:py-32">
+      <section
+  id="showcase"
+  className="relative z-10 border-t border-transparent bg-black px-6 py-24 md:py-24 md:py-32"
+>
 
         <div className="mx-auto max-w-7xl">
           {/* FLOATING SYSTEM ORBS */}
@@ -940,7 +980,10 @@ window.addEventListener("scroll", handleScroll);
             {/* CASE STUDY SECTION */}
       
 
-      <section id="case-study" className="relative z-10 border-t border-transparent bg-[#050505] px-6 py-24 md:py-24 md:py-32">
+      <section
+  id="case-study"
+  className="relative z-10 border-t border-transparent bg-[#050505] px-6 py-24 md:py-24 md:py-32"
+>
 
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
 
@@ -1170,7 +1213,7 @@ window.addEventListener("scroll", handleScroll);
       <Reveal>
             {/* CTA SECTION */}
       
-      <section id="contact" className="relative z-10 overflow-hidden border-t border-transparent bg-[#050505] px-6 py-40">
+      <section className="relative z-10 overflow-hidden border-t border-transparent bg-[#050505] px-6 py-40">
 
         {/* BACKGROUND GLOW */}
         <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-[110px]"></div>
@@ -1251,26 +1294,37 @@ window.addEventListener("scroll", handleScroll);
           Navigation
         </h4>
 
-        <div className="flex flex-col gap-4 text-gray-400">
+       <div className="flex flex-col gap-4 text-gray-400">
 
-          <a href="#solutions" className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100">
-            Solutions
-          </a>
+  <Link
+    href="#solutions"
+    className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100"
+  >
+    Solutions
+  </Link>
 
-          <a href="#showcase" className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100">
-            Showcase
-          </a>
+  <Link
+    href="#showcase"
+    className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100"
+  >
+    Showcase
+  </Link>
 
-          <a href="#case-study" className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100">
-            Case Studies
-          </a>
+  <Link
+    href="#case-study"
+    className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100"
+  >
+    Case Studies
+  </Link>
 
-          <a href="#contact" className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100">
-            Contact
-          </a>
+  <Link
+    href="/contact"
+    className="opacity-70 transition-all duration-300 hover:text-blue-400 hover:opacity-100"
+  >
+    Contact
+  </Link>
 
-        </div>
-
+</div>
       </div>
 
       {/* SOCIALS */}

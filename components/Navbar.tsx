@@ -12,15 +12,15 @@ export default function Navbar() {
 
     <nav className="fixed left-1/2 top-4 z-[9999] w-[92%] sm:w-[95%] max-w-7xl -translate-x-1/2">
 
-      <div className="rounded-full border border-white/10 bg-black/80 backdrop-blur-2xl">
+      <div className="rounded-full border border-white/10 bg-black/80 backdrop-blur-xl md:blur-2xl">
 
-        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+        <div className="flex items-center justify-between px-4 py-2.5 sm:px-6">
 
           {/* LOGO */}
 
           <Link
             href="/"
-            className="text-lg font-semibold tracking-[0.2em] text-white"
+            className="text-base sm:text-lg font-semibold tracking-[0.18em] text-white"
           >
             CHIDAKARA
           </Link>
@@ -29,42 +29,46 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
             
+<Link
+  href="/about"
+  className="transition-colors duration-300 hover:text-white"
+>
+  About
+</Link>
+           <Link
+  href="/solutions"
+  className="transition-colors duration-300 hover:text-white"
+>
+  Solutions
+</Link>
 
-            <Link
-              href="/solutions"
-              className="transition-colors duration-300 hover:text-white"
-            >
-              Solutions
-            </Link>
+<Link
+  href="/showcase"
+  className="transition-colors duration-300 hover:text-white"
+>
+  Showcase
+</Link>
 
-            <Link
-              href="/showcase"
-              className="transition-colors duration-300 hover:text-white"
-            >
-              Showcase
-            </Link>
+<Link
+  href="/case-studies"
+  className="transition-colors duration-300 hover:text-white"
+>
+  Case Studies
+</Link>
 
-            <Link
-              href="/case-studies"
-              className="transition-colors duration-300 hover:text-white"
-            >
-              Case Studies
-            </Link>
+<Link
+  href="/dashboard-demo"
+  className="transition-colors duration-300 hover:text-white"
+>
+  Dashboard
+</Link>
 
-            <Link
-              href="/dashboard-demo"
-              className="transition-colors duration-300 hover:text-white"
-            >
-              Dashboard
-            </Link>
-
-            <Link
-              href="/contact"
-              className="transition-colors duration-300 hover:text-white"
-            >
-              Contact
-            </Link>
-
+<Link
+  href="/contact"
+  className="transition-colors duration-300 hover:text-white"
+>
+  Contact
+</Link>
           </div>
 
           {/* CTA BUTTON */}
@@ -73,7 +77,7 @@ export default function Navbar() {
 
             <Link
   href="/contact"
-  className="rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-500"
+  className="rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-500"
 >
   Let’s Build
 </Link>
@@ -83,13 +87,15 @@ export default function Navbar() {
           {/* MOBILE BUTTON */}
 
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] md:hidden"
-          >
-
-         
-
-          </button>
+  onClick={() => setMenuOpen(!menuOpen)}
+  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] md:hidden"
+>
+  {menuOpen ? (
+    <X className="h-5 w-5 text-white" />
+  ) : (
+    <Menu className="h-5 w-5 text-white" />
+  )}
+</button>
 
         </div>
 
@@ -104,26 +110,29 @@ export default function Navbar() {
         >
 
           <div className="flex flex-col gap-5 text-base px-6 py-8 text-gray-300">
+<Link href="/about">
+  About
+</Link>
+           <Link href="/solutions" onClick={() => setMenuOpen(false)}>
+  Solutions
+</Link>
 
-            <Link href="/solutions">
-              Solutions
-            </Link>
+<Link href="/showcase">
+  Showcase
+</Link>
 
-            <Link href="/showcase">
-              Showcase
-            </Link>
+<Link href="/case-studies">
+  Case Studies
+</Link>
 
-            <Link href="/case-studies">
-              Case Studies
-            </Link>
+<Link href="/dashboard-demo">
+  Dashboard
+</Link>
 
-            <Link href="/dashboard-demo">
-              Dashboard
-            </Link>
+<Link href="/contact">
+  Contact
+</Link>
 
-            <Link href="/contact">
-              Contact
-            </Link>
 
            <Link
   href="/contact"
