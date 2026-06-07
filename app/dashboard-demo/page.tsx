@@ -17,40 +17,40 @@ export const metadata = {
 
 const systems = [
   {
-    title: "AI Infrastructure",
-    value: "99.98%",
-    status: "Operational",
+    title: "Monthly Revenue",
+    value: "₹24.8L",
+    status: "+18% vs Last Month",
     icon: Database,
   },
 
   {
-    title: "Automation Systems",
-    value: "248",
-    status: "Realtime Active",
-    icon: Workflow,
+    title: "Active Customers",
+    value: "1,284",
+    status: "Currently Active",
+    icon: Bot,
   },
 
   {
-    title: "AI Predictions",
-    value: "3.2M",
-    status: "Daily Events",
+    title: "Lead Conversion",
+    value: "18.6%",
+    status: "Qualified Leads",
     icon: Brain,
   },
 
   {
-    title: "Security Layer",
-    value: "Secure",
-    status: "Protected",
+    title: "Support Tickets",
+    value: "42",
+    status: "Open Cases",
     icon: ShieldCheck,
   },
 ];
 
 const activityFeed = [
-  "AI forecasting engine generated operational prediction",
-  "Workflow orchestration pipeline synchronized successfully",
-  "Enterprise monitoring infrastructure updated globally",
-  "Realtime automation event processed successfully",
-  "Neural intelligence analytics system calibrated",
+  "New enterprise lead qualified by AI agent",
+  "Customer support ticket resolved automatically",
+  "Monthly revenue dashboard updated",
+  "Sales pipeline converted a new client",
+  "Workflow automation processed inbound inquiry",
 ];
 
 export default function DashboardDemoPage() {
@@ -78,23 +78,22 @@ export default function DashboardDemoPage() {
 
             <p className="text-sm uppercase tracking-[0.4em] text-cyan-400">
 
-              AI OPERATIONS DASHBOARD
+              BUSINESS INTELLIGENCE DASHBOARD
 
             </p>
 
             <h1 className="mt-8 max-w-5xl text-5xl font-semibold leading-tight tracking-[-0.04em] md:text-7xl">
 
-              Realtime Enterprise
-              <span className="text-blue-500"> Intelligence Systems</span>
+              Operational
+              <span className="text-blue-500"> Intelligence Dashboard</span>
 
             </h1>
 
             <p className="mt-10 max-w-3xl text-lg leading-relaxed text-gray-400">
 
-              Advanced AI infrastructure monitoring, predictive analytics,
-              automation orchestration, and enterprise operational intelligence
-              engineered for modern organizations.
-
+              Monitor revenue, customer activity, lead generation,
+support performance, and operational efficiency
+through intelligent business dashboards.
             </p>
 
           </div>
@@ -117,13 +116,13 @@ export default function DashboardDemoPage() {
 
                   <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
 
-                    SYSTEM ANALYTICS
+                    BUSINESS ANALYTICS
 
                   </p>
 
                   <h2 className="mt-4 text-3xl font-semibold">
 
-                    Enterprise Intelligence Grid
+                    Revenue Performance
 
                   </h2>
 
@@ -171,17 +170,11 @@ export default function DashboardDemoPage() {
 
                 <div className="mt-8 flex justify-between text-sm text-gray-500">
 
-                  <span>Jan</span>
-                  <span>Feb</span>
-                  <span>Mar</span>
-                  <span>Apr</span>
-                  <span>May</span>
-                  <span>Jun</span>
-                  <span>Jul</span>
-                  <span>Aug</span>
-                  <span>Sep</span>
-                  <span>Oct</span>
-
+                  <span>Q1</span>
+                  <span>Q2</span>
+                  <span>Q3</span>
+                  <span>Q4</span>
+                  
                 </div>
 
               </div>
@@ -204,7 +197,7 @@ export default function DashboardDemoPage() {
 
                   <h2 className="mt-4 text-3xl font-semibold">
 
-                    AI Event Feed
+                    BUSINESS ACTIVITY
 
                   </h2>
 
@@ -318,22 +311,21 @@ export default function DashboardDemoPage() {
 
                 <p className="text-sm uppercase tracking-[0.4em] text-cyan-400">
 
-                  AI AGENT NETWORK
+                  BUSINESS PERFORMANCE
 
                 </p>
 
                 <h2 className="mt-8 max-w-3xl text-5xl font-semibold leading-tight md:text-6xl">
 
-                  Autonomous Enterprise Intelligence Infrastructure
+                  Business Performance Overview
 
                 </h2>
 
                 <p className="mt-10 max-w-2xl text-lg leading-relaxed text-gray-400">
 
-                  Chidakara AI systems coordinate predictive analytics,
-                  workflow automation, enterprise monitoring,
-                  and realtime infrastructure intelligence across
-                  scalable operational ecosystems.
+                  Track business growth, customer engagement,
+lead generation, support activity, and operational
+performance from a unified dashboard experience.
 
                 </p>
 
@@ -344,11 +336,11 @@ export default function DashboardDemoPage() {
               <div className="grid gap-6 sm:grid-cols-2">
 
                 {[
-                  ["248+", "AI Pipelines"],
-                  ["99%", "Realtime Reliability"],
-                  ["24/7", "Autonomous Monitoring"],
-                  ["3.2M", "Daily AI Events"],
-                ].map(([number, label], index) => (
+ ["84", "New Leads"],
+ ["52", "Qualified Leads"],
+ ["21", "Proposals Sent"],
+ ["9", "Closed Deals"],
+].map(([number, label], index) => (
 
                   <div
                     key={index}

@@ -170,10 +170,10 @@ window.addEventListener("scroll", handleScroll);
   </Link>
 
   <Link
-    href="/dashboard-demo"
+    href="/command-center"
     className="group relative text-gray-300 transition duration-300 hover:text-blue-400"
   >
-    <span>Dashboard</span>
+    <span>AI Agents</span>
     <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-blue-500 transition-all duration-500 group-hover:w-full"></span>
   </Link>
 
@@ -287,46 +287,157 @@ window.addEventListener("scroll", handleScroll);
 </section>
 </FadeIn>
 <LiveMetrics />
-<FadeIn>
-<section className="relative z-10 py-28">
-
+<section
+  id="live-demos"
+  className="relative z-10 py-32 border-t border-white/5"
+>
   <div className="mx-auto max-w-7xl">
 
-    <div className="rounded-[3rem] border border-white/10 bg-white/[0.03] p-12 backdrop-blur-xl">
+    <div className="text-center mb-16">
 
-      <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
-        ABOUT CHIDAKARA
+      <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-500">
+        LIVE DEMONSTRATIONS
       </p>
 
-      <h2 className="mt-6 max-w-4xl text-4xl font-semibold md:text-6xl">
-        Building Intelligent Infrastructure
-        for Modern Organizations
+      <h2 className="text-4xl md:text-6xl font-semibold">
+        Explore Working AI Systems
       </h2>
 
-      <p className="mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
-        Chidakara engineers AI-powered systems that combine
-        automation, analytics, operational intelligence,
-        and modern software engineering into scalable
-        digital ecosystems.
+      <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-400">
+        Experience interactive demonstrations of AI assistants,
+        workflow automation systems, analytics platforms,
+        and intelligent business solutions.
       </p>
 
-      <div className="mt-10">
+    </div>
+
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-6">
+
+      {/* AI Assistant */}
+
+      <div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
+        <h3 className="text-3xl font-semibold">
+          AI Assistant
+        </h3>
+
+        <p className="mt-4 text-gray-400">
+          Interactive business assistant capable of answering
+          questions and demonstrating conversational intelligence.
+        </p>
 
         <Link
-          href="/about"
-          className="rounded-full bg-blue-600 px-8 py-4 font-medium transition-all duration-300 hover:bg-blue-500"
+          href="/ai-assistant"
+          className="mt-8 inline-block rounded-full bg-blue-600 px-6 py-3"
         >
-          Learn More About Us
+          Launch Demo
         </Link>
-
       </div>
+
+      {/* Automation */}
+
+      <div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
+        <h3 className="text-3xl font-semibold">
+          Workflow Automation
+        </h3>
+
+        <p className="mt-4 text-gray-400">
+          Visualize automated workflows processing data,
+          triggering actions, and streamlining operations.
+        </p>
+
+        <Link
+          href="/automation-demo"
+          className="mt-8 inline-block rounded-full bg-blue-600 px-6 py-3"
+        >
+          Launch Demo
+        </Link>
+      </div>
+
+      {/* Dashboard */}
+
+      <div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
+        <h3 className="text-3xl font-semibold">
+          Business Dashboard
+        </h3>
+
+        <p className="mt-4 text-gray-400">
+          Intelligent analytics dashboards designed for
+          operational visibility and business intelligence.
+        </p>
+
+        <Link
+          href="/dashboard-demo"
+          className="mt-8 inline-block rounded-full bg-blue-600 px-6 py-3"
+        >
+          Launch Demo
+        </Link>
+      </div>
+      {/* Lead Qualification Agent */}
+
+<div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
+
+  <h3 className="text-3xl font-semibold">
+    Lead Qualification Agent
+  </h3>
+
+  <p className="mt-4 text-gray-400">
+    Interactive AI agent that qualifies prospects,
+    identifies business challenges, and recommends
+    intelligent solutions.
+  </p>
+
+  <Link
+    href="/lead-agent"
+    className="mt-8 inline-block rounded-full bg-blue-600 px-6 py-3"
+  >
+    Launch Demo
+  </Link>
+
+</div>
+<div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
+
+  <h3 className="text-3xl font-semibold">
+    Customer Support Agent
+  </h3>
+
+  <p className="mt-4 text-gray-400">
+    AI-powered support assistant capable of handling customer inquiries,
+    FAQs, and ticket routing.
+  </p>
+
+  <Link
+    href="/customer-support-agent"
+    className="mt-8 inline-block rounded-full bg-blue-600 px-6 py-3"
+  >
+    Launch Demo
+  </Link>
+
+</div>
+<div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
+
+  <h3 className="text-3xl font-semibold">
+    Research Agent
+  </h3>
+
+  <p className="mt-4 text-gray-400">
+    Analyze industries, identify challenges,
+    and discover AI implementation opportunities.
+  </p>
+
+  <Link
+    href="/research-agent"
+    className="mt-8 inline-block rounded-full bg-blue-600 px-6 py-3"
+  >
+    Launch Demo
+  </Link>
+
+</div>
 
     </div>
 
   </div>
-
 </section>
-</FadeIn>
+
 {/* CASE STUDIES SECTION */}
 
 <section
@@ -516,7 +627,7 @@ window.addEventListener("scroll", handleScroll);
             </p>
           </div>
 
-          <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-5">
 
             {/* CARD 1 */}
             <div
@@ -620,6 +731,46 @@ window.addEventListener("scroll", handleScroll);
 
       </section>
       </Reveal>
+      <FadeIn>
+<section className="relative z-10 py-28">
+
+  <div className="mx-auto max-w-7xl">
+
+    <div className="rounded-[3rem] border border-white/10 bg-white/[0.03] p-12 backdrop-blur-xl">
+
+      <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
+        ABOUT CHIDAKARA
+      </p>
+
+      <h2 className="mt-6 max-w-4xl text-4xl font-semibold md:text-6xl">
+        Building Intelligent Infrastructure
+        for Modern Organizations
+      </h2>
+
+      <p className="mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
+        Chidakara engineers AI-powered systems that combine
+        automation, analytics, operational intelligence,
+        and modern software engineering into scalable
+        digital ecosystems.
+      </p>
+
+      <div className="mt-10">
+
+        <Link
+          href="/about"
+          className="rounded-full bg-blue-600 px-8 py-4 font-medium transition-all duration-300 hover:bg-blue-500"
+        >
+          Learn More About Us
+        </Link>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+</FadeIn>
       <Reveal>
             {/* SHOWCASE SECTION */}
       
@@ -680,7 +831,7 @@ window.addEventListener("scroll", handleScroll);
 
   </div>
 
-  <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-4">
+  <div className="grid gap-6 md:p-8 md:grid-cols-2 xl:grid-cols-5">
 
     {/* STEP 1 */}
     <div className="group relative overflow-hidden rounded-3xl border border-white/8 bg-black/60 backdrop-blur-2xl bg-black/30 p-6 md:p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:scale-[1.015] hover:border-cyan-400/30">
@@ -1142,7 +1293,7 @@ window.addEventListener("scroll", handleScroll);
           </div>
 
           {/* TECH GRID */}
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
 
             {[
               "Next.js",

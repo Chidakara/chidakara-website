@@ -1,32 +1,38 @@
 "use client";
-
+import Link from "next/link";
 const agents = [
   {
     name: "Athena",
     role: "Business Intelligence Agent",
     status: "Active",
     tasks: "Analytics • Forecasting • Reporting",
+    link: "/research-agent",
   },
+
   {
     name: "Orion",
-    role: "Workflow Automation Agent",
+    role: "Sales Intelligence Agent",
     status: "Processing",
-    tasks: "CRM • Pipelines • Operations",
+    tasks: "Pipeline • Revenue • CRM",
+    link: "/sales-agent",
   },
+
   {
     name: "Nova",
-    role: "Customer Interaction Agent",
+    role: "Customer Support Agent",
     status: "Online",
     tasks: "Support • Conversations • Assistance",
+    link: "/customer-support-agent",
   },
+
   {
     name: "Sentinel",
-    role: "Infrastructure Monitoring Agent",
+    role: "Lead Qualification Agent",
     status: "Monitoring",
-    tasks: "Servers • Uptime • Security",
+    tasks: "Lead Scoring • Qualification • Discovery",
+    link: "/lead-agent",
   },
 ];
-
 export default function AIAgentsPage() {
   return (
     <main className="min-h-screen bg-black px-6 py-28 text-white">
@@ -57,8 +63,9 @@ export default function AIAgentsPage() {
 
         {agents.map((agent, index) => (
 
-          <div
-            key={index}
+  <Link
+    href={agent.link}
+    key={index}
             className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 transition-all duration-500 hover:border-blue-500/40"
           >
 
@@ -144,10 +151,21 @@ export default function AIAgentsPage() {
                 ))}
 
               </div>
+              <div className="mt-8">
+  <div className="mt-8 flex items-center justify-between">
+  <span className="text-sm text-gray-500">
+    Open Agent
+  </span>
+
+  <span className="text-blue-400 transition-transform duration-300 group-hover:translate-x-1">
+    →
+  </span>
+</div>
+</div>
 
             </div>
 
-          </div>
+          </Link>
 
         ))}
 

@@ -41,7 +41,12 @@ export default function Navbar() {
 >
   Solutions
 </Link>
-
+<Link
+  href="/command-center"
+  className="transition-colors duration-300 hover:text-white"
+>
+  AI Agents
+</Link>
 <Link
   href="/showcase"
   className="transition-colors duration-300 hover:text-white"
@@ -56,12 +61,7 @@ export default function Navbar() {
   Case Studies
 </Link>
 
-<Link
-  href="/dashboard-demo"
-  className="transition-colors duration-300 hover:text-white"
->
-  Dashboard
-</Link>
+
 
 <Link
   href="/contact"
@@ -125,8 +125,8 @@ export default function Navbar() {
   Case Studies
 </Link>
 
-<Link href="/dashboard-demo">
-  Dashboard
+<Link href="/command-center">
+  AI Agents
 </Link>
 
 <Link href="/contact">

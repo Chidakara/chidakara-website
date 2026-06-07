@@ -2,24 +2,29 @@
 
 const pipeline = [
   {
-    step: "Lead Capture",
+    step: "Lead Submitted",
     description:
-      "AI collects customer inquiries from websites, forms, and communication channels.",
+      "A new prospect submits an inquiry through the Chidakara contact form.",
   },
   {
-    step: "AI Analysis",
+    step: "AI Qualification",
     description:
-      "Intelligent systems classify, prioritize, and analyze business requirements.",
+      "AI analyzes project requirements, urgency, budget, and business challenges.",
   },
   {
-    step: "Workflow Routing",
+    step: "CRM Updated",
     description:
-      "Automation pipelines distribute tasks across CRM, dashboards, and operations.",
+      "Lead information is automatically stored and categorized.",
   },
   {
-    step: "Predictive Insights",
+    step: "Email Sent",
     description:
-      "AI engines generate forecasts, trends, and operational intelligence.",
+      "Confirmation emails and internal notifications are generated.",
+  },
+  {
+    step: "Dashboard Updated",
+    description:
+      "Business dashboards instantly reflect new lead activity.",
   },
 ];
 
@@ -51,7 +56,7 @@ export default function AutomationDemoPage() {
 
       <div className="mx-auto mt-28 max-w-6xl">
 
-        <div className="relative grid gap-10 md:grid-cols-4">
+        <div className="relative grid gap-10 md:grid-cols-5">
 
           {/* CONNECTOR LINE */}
 
@@ -101,14 +106,11 @@ export default function AutomationDemoPage() {
             </p>
 
             <h2 className="mt-6 text-4xl font-bold">
-              AI Systems Operating At Scale
+              Lead Management Automation
             </h2>
 
             <p className="mt-6 leading-8 text-gray-400">
-              Chidakara infrastructures integrate AI models,
-              workflow orchestration, predictive analytics,
-              and operational intelligence into unified
-              enterprise ecosystems.
+              This workflow demonstrates how businesses can automate lead intake, qualification, notifications, CRM updates, and reporting using intelligent systems.
             </p>
 
           </div>
@@ -118,11 +120,11 @@ export default function AutomationDemoPage() {
           <div className="grid gap-6 sm:grid-cols-2">
 
             {[
-              ["98%", "Automation Accuracy"],
-              ["24/7", "System Availability"],
-              ["2.4M", "AI Operations"],
-              ["128+", "Enterprise Workflows"],
-            ].map(([value, label], index) => (
+ ["342", "Qualified Leads"],
+ ["87%", "Automation Rate"],
+ ["4.2 Min", "Response Time"],
+ ["₹18.4L", "Pipeline Value"],
+].map(([value, label], index) => (
 
               <div
                 key={index}

@@ -2,7 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
@@ -10,6 +10,12 @@ export default function ContactPage() {
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  
+
+const searchParams = useSearchParams();
+
+const source =
+  searchParams.get("source") || "website";
   const router = useRouter();
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +26,8 @@ export default function ContactPage() {
   setLoading(true);
 
 try {
-  const formData = {
+ const formData = {
+  source,
   user_name: (
     formRef.current.elements.namedItem("user_name") as HTMLInputElement
   ).value,
@@ -43,6 +50,12 @@ try {
 
   timeline: (
     formRef.current.elements.namedItem("timeline") as HTMLSelectElement
+  ).value,
+
+  current_challenge: (
+    formRef.current.elements.namedItem(
+      "current_challenge"
+    ) as HTMLSelectElement
   ).value,
 
   message: (
@@ -116,6 +129,7 @@ router.push("/contact/success");
           <form
             ref={formRef}
             onSubmit={sendEmail}
+            
             className="grid gap-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl"
           >
 
@@ -211,7 +225,24 @@ router.push("/contact/success");
     <option>Flexible</option>
   </select>
 </div>
+<div>
+  <label className="mb-3 block text-sm text-gray-400">
+    Primary Business Challenge
+  </label>
 
+  <select
+    name="current_challenge"
+    className="w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-4"
+  >
+    <option>Too Much Manual Work</option>
+    <option>Poor Reporting & Visibility</option>
+    <option>Customer Support Bottlenecks</option>
+    <option>Lead Management Problems</option>
+    <option>Workflow Inefficiencies</option>
+    <option>Multiple Software Systems</option>
+    <option>Other</option>
+  </select>
+</div>
             <div>
               <label className="mb-3 block text-sm text-gray-400">
                 Project Details
@@ -239,7 +270,11 @@ router.push("/contact/success");
                 Message sent successfully.
               </p>
             )}
-
+<input
+  type="hidden"
+  name="source"
+  value={source}
+/>
           </form>
 
         </section>
