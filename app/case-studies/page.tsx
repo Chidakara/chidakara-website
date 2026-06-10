@@ -6,24 +6,24 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import BackgroundEffects from "@/components/BackgroundEffects";
+import VisualEffects from "@/components/VisualEffects";
 const caseStudies = [
   {
-    company: "Nexus Logistics",
+    company: "AI Lead Qualification Platform",
     industry: "Supply Chain Intelligence",
     result: "42% workflow optimization",
     description:
       "Implemented AI automation pipelines and predictive analytics systems for enterprise logistics monitoring.",
   },
   {
-    company: "Aether Finance",
+    company: "Enterprise Analytics Dashboard",
     industry: "Financial Intelligence",
     result: "3.2M AI predictions daily",
     description:
       "Developed enterprise-grade AI dashboards for predictive financial reporting and operational forecasting.",
   },
   {
-    company: "Vertex Healthcare",
+    company: "AI Customer Support Infrastructure",
     industry: "Healthcare Automation",
     result: "68% faster processing",
     description:
@@ -37,7 +37,7 @@ export default function CaseStudiesPage() {
     <Navbar />
 
     <main className="min-h-screen overflow-hidden bg-black px-6 py-28 text-white">
-    <BackgroundEffects />
+    <VisualEffects />
       {/* BACKGROUND */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">

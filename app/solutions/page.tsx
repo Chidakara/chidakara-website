@@ -3,7 +3,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import MetricCard from "@/components/MetricCard";
-import BackgroundEffects from "@/components/BackgroundEffects";
+import VisualEffects from "@/components/VisualEffects";
 import {
   Bot,
   BarChart3,
@@ -19,43 +19,43 @@ export const metadata = {
 
 const solutions = [
   {
-    title: "AI Automation Systems",
-    desc: "...",
+     title: "AI Automation Systems",
+  desc: "Automate repetitive business operations with intelligent workflows, integrations, and AI-powered decision making.",
     icon: Bot,
     route: "/solutions/workflow-automation",
   },
 
   {
     title: "Analytics Infrastructure",
-    desc: "...",
+  desc: "Transform operational data into real-time dashboards, predictive insights, and executive reporting systems.",
     icon: BarChart3,
     route: "/solutions/ai-dashboards",
   },
 
   {
     title: "AI Assistants",
-    desc: "...",
+  desc: "Deploy AI assistants for customer support, internal knowledge retrieval, and business operations.",
     icon: MessageSquare,
     route: "/solutions/ai-assistants",
   },
 
   {
     title: "Workflow Intelligence",
-    desc: "...",
+  desc: "Connect systems, automate approvals, and orchestrate complex business processes at scale.",
     icon: Workflow,
     route: "/solutions/workflow-automation",
   },
 
   {
     title: "Infrastructure Monitoring",
-    desc: "...",
+  desc: "Gain visibility into business operations, system health, and performance through intelligent monitoring.",
     icon: Activity,
-    route: "/architecture/insights-scaling",
+    route: "/solutions/intelligent-systems",
   },
 
   {
     title: "Custom AI Platforms",
-    desc: "...",
+  desc: "Build tailored AI systems, multi-agent architectures, and enterprise-grade intelligent platforms.",
     icon: Cpu,
     route: "/solutions/intelligent-systems",
   },
@@ -66,7 +66,7 @@ export default function SolutionsPage() {
       <Navbar />
 
       <main className="relative min-h-screen overflow-hidden bg-black px-6 pb-24 pt-52 text-white">
-      <BackgroundEffects />
+      <VisualEffects />
         {/* BACKGROUND */}
 
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -163,7 +163,47 @@ export default function SolutionsPage() {
           </div>
 
         </section>
+{/* INDUSTRIES */}
 
+<section className="relative z-10 py-20">
+
+  <div className="mx-auto max-w-7xl">
+
+    <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
+      INDUSTRIES
+    </p>
+
+    <h2 className="mt-6 text-4xl font-semibold md:text-6xl">
+      Industries We Serve
+    </h2>
+
+    <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      {[
+        "Healthcare",
+        "Finance",
+        "Logistics",
+        "Retail",
+        "Manufacturing",
+        "Education",
+      ].map((industry) => (
+
+        <div
+          key={industry}
+          className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8"
+        >
+          <h3 className="text-2xl font-semibold">
+            {industry}
+          </h3>
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
         {/* ENTERPRISE METRICS */}
 
         <section className="relative z-10 py-10">
@@ -196,7 +236,49 @@ export default function SolutionsPage() {
           </div>
 
         </section>
+{/* PROCESS */}
 
+<section className="relative z-10 py-28">
+
+  <div className="mx-auto max-w-7xl">
+
+    <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
+      OUR PROCESS
+    </p>
+
+    <h2 className="mt-6 text-4xl font-semibold md:text-6xl">
+      How We Build
+    </h2>
+
+    <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+      {[
+        ["01", "Discovery"],
+        ["02", "Architecture"],
+        ["03", "Development"],
+        ["04", "Deployment"],
+      ].map(([number, title]) => (
+
+        <div
+          key={number}
+          className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8"
+        >
+          <p className="text-blue-400 text-4xl font-bold">
+            {number}
+          </p>
+
+          <h3 className="mt-6 text-2xl font-semibold">
+            {title}
+          </h3>
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
         {/* CTA */}
 
         <section className="relative z-10 pb-24 pt-28">

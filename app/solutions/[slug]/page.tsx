@@ -1,12 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BackgroundEffects from "@/components/BackgroundEffects";
+import VisualEffects from "@/components/VisualEffects";
 import { solutions } from "@/lib/solutions";
 import { notFound } from "next/navigation";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import AIChatDemo from "@/components/AIChatDemo";
-import MouseGlow from "@/components/MouseGlow";
-import Particles from "@/components/Particles";
+
 import AnalyticsCharts from "@/components/AnalyticsCharts";
 import AITerminal from "@/components/AITerminal";
 import AINetwork from "@/components/AINetwork";
@@ -30,9 +29,9 @@ export default async function SolutionDetailPage({
 
       <main className="relative min-h-screen overflow-hidden bg-black px-6 pt-40 text-white">
 
-        <BackgroundEffects />
-        <Particles />
-        <MouseGlow />
+        <VisualEffects />
+       
+     
 
         <section className="relative z-10 mx-auto max-w-6xl">
 
@@ -75,6 +74,41 @@ export default async function SolutionDetailPage({
                 </div>
               ))}
 
+
+</div>
+{/* BUSINESS OUTCOMES */}
+
+<div className="mt-16">
+
+  <h2 className="text-3xl font-semibold">
+    Expected Business Outcomes
+  </h2>
+
+  <div className="mt-8 grid gap-6 md:grid-cols-3">
+
+    {[
+      ["40%", "Faster Operations"],
+      ["60%", "Reduced Manual Work"],
+      ["24/7", "System Availability"],
+    ].map(([value, label]) => (
+
+      <div
+        key={label}
+        className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8"
+      >
+        <h3 className="text-4xl font-bold text-blue-400">
+          {value}
+        </h3>
+
+        <p className="mt-4 text-gray-400">
+          {label}
+        </p>
+
+      </div>
+
+    ))}
+
+  </div>
             </div>
             {/* AI DASHBOARD PREVIEW */}
 
@@ -183,6 +217,33 @@ export default async function SolutionDetailPage({
   </div>
 
 </div>
+<section className="mt-24">
+
+  <h2 className="text-3xl font-semibold">
+    Industries Using This Solution
+  </h2>
+
+  <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+    {[
+      "Healthcare",
+      "Finance",
+      "Logistics",
+      "Retail",
+    ].map((industry) => (
+
+      <div
+        key={industry}
+        className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6"
+      >
+        {industry}
+      </div>
+
+    ))}
+
+  </div>
+
+</section>
 <section className="mt-20">
   <ActivityFeed />
 </section>
@@ -197,6 +258,29 @@ export default async function SolutionDetailPage({
 </section>
 <section className="mt-24 pb-10">
   <AIChatDemo />
+</section>
+<section className="mt-24 text-center">
+
+  <h2 className="text-4xl font-semibold">
+    Ready To Build This System?
+  </h2>
+
+  <p className="mx-auto mt-6 max-w-2xl text-gray-400">
+    Discuss architecture, integrations, deployment,
+    and implementation with Chidakara.
+  </p>
+
+  <div className="mt-10">
+
+    <a
+      href="/contact"
+      className="rounded-full bg-blue-600 px-8 py-4 font-medium"
+    >
+      Start Your Project
+    </a>
+
+  </div>
+
 </section>
 <section className="mt-24 pb-20">
   <LeadCaptureForm />

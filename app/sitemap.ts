@@ -15,11 +15,10 @@ export default function sitemap() {
       lastModified: new Date(),
     },
 
-    {
-      url: "https://chidakara.com/showcase",
-      lastModified: new Date(),
-    },
-
+   {
+  url: "https://chidakara.com/technology",
+  lastModified: new Date(),
+},
     {
       url: "https://chidakara.com/case-studies",
       lastModified: new Date(),

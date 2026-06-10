@@ -1,20 +1,20 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import BackgroundEffects from "@/components/BackgroundEffects";
-import Link from "next/link";
+import VisualEffects from "@/components/VisualEffects";
+
 
 export const metadata = {
   title: "About — Chidakara",
 };
 
-const technologies = [
-  "Next.js",
-  "FastAPI",
-  "OpenAI",
-  "Supabase",
-  "n8n",
-  "TypeScript",
+const capabilities = [
+  "AI Assistants",
+  "Workflow Automation",
+  "Business Intelligence",
+  "Operational Dashboards",
+  "Custom AI Systems",
+  "Multi-Agent Platforms",
 ];
 
 export default function AboutPage() {
@@ -24,7 +24,7 @@ export default function AboutPage() {
 
       <main className="relative min-h-screen overflow-hidden bg-black px-6 pb-24 pt-40 text-white">
 
-        <BackgroundEffects />
+        <VisualEffects />
 
         {/* HERO */}
 
@@ -76,6 +76,31 @@ export default function AboutPage() {
   </div>
 
 </section>
+
+{/* WHY CHIDAKARA EXISTS */}
+<section className="relative z-10 mx-auto mt-28 max-w-7xl">
+
+  <div className="rounded-[3rem] border border-white/10 bg-white/[0.03] p-10">
+
+    <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
+      WHY WE EXIST
+    </p>
+
+    <h2 className="mt-6 text-4xl font-semibold md:text-6xl">
+      Businesses Deserve Better Systems
+    </h2>
+
+    <p className="mt-8 max-w-5xl text-lg leading-relaxed text-gray-400">
+      Most organizations rely on disconnected software,
+      manual workflows, spreadsheets, and repetitive
+      processes. Chidakara exists to transform those
+      fragmented systems into intelligent, automated,
+      and scalable digital ecosystems.
+    </p>
+
+  </div>
+
+</section>
         {/* MISSION */}
 
         <section className="relative z-10 mx-auto mt-28 max-w-7xl">
@@ -99,84 +124,69 @@ export default function AboutPage() {
           </div>
 
         </section>
+        {/* STATS */}
 
-        {/* TECHNOLOGY STACK */}
+<section className="relative z-10 mx-auto mt-28 max-w-7xl">
 
-        <section className="relative z-10 mx-auto mt-28 max-w-7xl">
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
-          <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
-            TECHNOLOGY STACK
-          </p>
+    {[
+      ["4+", "AI Agents"],
+      ["Growing", "Project Portfolio"],
+      ["24/7", "Automation"],
+      ["100%", "Custom Solutions"],
+    ].map(([value, label]) => (
 
-          <h2 className="mt-6 text-4xl font-semibold md:text-6xl">
-            Built With Modern Technologies
-          </h2>
+      <div
+        key={label}
+        className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl"
+      >
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <h3 className="text-4xl font-bold text-blue-400">
+          {value}
+        </h3>
 
-            {technologies.map((tech, index) => (
-              <div
-                key={index}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/30 hover:bg-blue-500/[0.03]"
-              >
-                <h3 className="text-2xl font-semibold">
-                  {tech}
-                </h3>
-              </div>
-            ))}
+        <p className="mt-4 text-gray-400">
+          {label}
+        </p>
 
-          </div>
+      </div>
 
-        </section>
-{/* CORE PRINCIPLES */}
+    ))}
+
+  </div>
+
+</section>
+
+       {/* CAPABILITIES */}
 
 <section className="relative z-10 mx-auto mt-28 max-w-7xl">
 
   <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
-    CORE PRINCIPLES
+    OUR CAPABILITIES
   </p>
 
   <h2 className="mt-6 text-4xl font-semibold md:text-6xl">
-    What Drives Our Engineering
+    What We Build
   </h2>
 
-  <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+  <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
-    {[
-      {
-        title: "Intelligence",
-        desc: "Systems should learn, adapt, and provide actionable insights.",
-      },
-      {
-        title: "Automation",
-        desc: "Manual processes should become intelligent workflows.",
-      },
-      {
-        title: "Scalability",
-        desc: "Infrastructure should evolve with organizational growth.",
-      },
-      {
-        title: "Innovation",
-        desc: "Technology should continuously improve and create value.",
-      },
-    ].map((item, index) => (
+    {capabilities.map((item) => (
       <div
-        key={index}
+        key={item}
         className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/30 hover:bg-blue-500/[0.03]"
       >
         <h3 className="text-2xl font-semibold">
-          {item.title}
+          {item}
         </h3>
-
-        <p className="mt-5 leading-relaxed text-gray-400">
-          {item.desc}
-        </p>
       </div>
     ))}
 
   </div>
 
-</section>{/* CORE PRINCIPLES */}
+</section>
+{/* CORE PRINCIPLES */}
 
 <section className="relative z-10 mx-auto mt-28 max-w-7xl">
 
@@ -250,6 +260,36 @@ export default function AboutPage() {
           </div>
 
         </section>
+        {/* FOUNDER */}
+
+<section className="relative z-10 mx-auto mt-28 max-w-7xl">
+
+  <div className="rounded-[3rem] border border-white/10 bg-white/[0.03] p-12 backdrop-blur-xl">
+
+    <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">
+      FOUNDER
+    </p>
+
+   <h2 className="mt-6 text-4xl font-semibold md:text-6xl">
+  Founder & CEO
+</h2>
+
+<p className="mt-4 text-xl text-blue-400">
+  Nanda Jaya Krishna
+</p>
+
+    <p className="mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
+      Chidakara was founded with the vision of building intelligent
+      infrastructures that combine artificial intelligence,
+      automation, analytics, and modern software engineering.
+      The goal is to help organizations leverage intelligent
+      technologies to operate more efficiently, automate
+      repetitive work, and make better decisions.
+    </p>
+
+  </div>
+
+</section>
 {/* ROADMAP */}
 
 <section className="relative z-10 mx-auto mt-28 max-w-7xl">

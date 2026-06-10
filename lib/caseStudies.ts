@@ -1,7 +1,7 @@
 export const caseStudies = [
   {
     slug: "nexus-logistics",
-    company: "Nexus Logistics",
+    company: "AI Lead Qualification Platform",
     industry: "Supply Chain Intelligence",
     result: "42% workflow optimization",
     description:
@@ -19,7 +19,7 @@ export const caseStudies = [
 
   {
     slug: "aether-finance",
-    company: "Aether Finance",
+    company: "Enterprise Analytics Dashboard",
     industry: "Financial Intelligence",
     result: "3.2M AI predictions daily",
 
@@ -38,7 +38,7 @@ export const caseStudies = [
 
   {
     slug: "vertex-healthcare",
-    company: "Vertex Healthcare",
+    company: "AI Customer Support Infrastructure",
     industry: "Healthcare Automation",
     result: "68% faster processing",
 

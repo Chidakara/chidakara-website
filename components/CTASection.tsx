@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="relative z-10 py-24">
+    <section className="relative z-10 px-6 py-24">
 
-      <div className="overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-br from-blue-950/30 to-black p-14 text-center backdrop-blur-2xl">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-br from-blue-950/30 to-black p-14 text-center backdrop-blur-2xl">
 
         <p className="mb-6 text-sm uppercase tracking-[0.35em] text-cyan-400">
           BUILD WITH CHIDAKARA

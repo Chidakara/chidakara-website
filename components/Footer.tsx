@@ -2,56 +2,65 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-gradient-to-b from-transparent to-blue-950/10 px-6 py-20">
+    <footer className="border-t border-white/10 bg-black">
+      <div className="mx-auto max-w-7xl px-6 py-16">
 
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
+        <div className="grid gap-12 md:grid-cols-3">
 
-        <div>
+          <div>
+            <h2 className="text-2xl font-semibold tracking-[0.2em]">
+              CHIDAKARA
+            </h2>
 
-          <h3 className="text-xl font-semibold tracking-[0.2em] text-white">
-            CHIDAKARA
-          </h3>
+            <p className="mt-6 max-w-sm text-gray-400">
+              Enterprise AI infrastructure,
+              intelligent automation systems,
+              operational intelligence,
+              and analytics platforms.
+            </p>
+          </div>
 
-          <p className="mt-2 text-sm text-gray-500">
-            Intelligent AI infrastructure systems for modern businesses.
-          </p>
+          <div>
+            <h3 className="text-lg font-medium">
+              Navigation
+            </h3>
 
-        </div>
+            <div className="mt-6 flex flex-col gap-3 text-gray-400">
 
-        <div className="flex gap-6 text-sm text-gray-400">
+              <Link href="/about">About</Link>
+              <Link href="/solutions">Solutions</Link>
+              <Link href="/technology">Technology</Link>
+              <Link href="/case-studies">Case Studies</Link>
+              <Link href="/contact">Contact</Link>
 
-          <Link
-  href="/about"
-  className="transition-colors duration-300 hover:text-white"
->
-  About
-</Link>
+            </div>
+          </div>
 
-<Link
-  href="/privacy"
-  className="transition-colors duration-300 hover:text-white"
->
-  Privacy
-</Link>
+          <div>
+            <h3 className="text-lg font-medium">
+              Connect
+            </h3>
 
-<Link
-  href="/terms"
-  className="transition-colors duration-300 hover:text-white"
->
-  Terms
-</Link>
+            <div className="mt-6 flex flex-col gap-3 text-gray-400">
 
-<Link
-  href="/contact"
-  className="transition-colors duration-300 hover:text-white"
->
-  Contact
-</Link>
+              <a href="mailto:hello@chidakara.com">
+                hello@chidakara.com
+              </a>
+
+              <a href="#">
+                LinkedIn
+              </a>
+
+              <a href="#">
+                GitHub
+              </a>
+
+            </div>
+          </div>
 
         </div>
 
       </div>
-
     </footer>
   );
 }
