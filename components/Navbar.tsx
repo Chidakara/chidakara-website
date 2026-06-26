@@ -4,10 +4,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-const navClass = (path: string) =>
-  pathname === path
-    ? "text-white"
-    : "text-gray-400 transition-colors duration-300 hover:text-white";
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

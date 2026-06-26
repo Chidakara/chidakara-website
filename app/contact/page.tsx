@@ -62,16 +62,12 @@ try {
     formRef.current.elements.namedItem("message") as HTMLTextAreaElement
   ).value,
 };
-console.log("SERVICE ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-console.log("TEMPLATE ID:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
-console.log("PUBLIC KEY:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
   const result = await emailjs.send(
   process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
   process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
   formData,
   process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
 );
-  console.log("SUCCESS!", result);
 
 formRef.current.reset();
 
